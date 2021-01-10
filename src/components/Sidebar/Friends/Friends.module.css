@@ -1,0 +1,40 @@
+.friends{
+    padding: 0 10px 30px 10px;
+}
+.title{
+    font-size: 24px;
+    color: #fff;
+    font-weight: 700;
+    margin: 0px 0px 10px 0px;
+    text-align: center;
+    position: relative;
+}
+.title span{
+    position: relative;
+    z-index: 2;
+    padding: 0 10px;
+}
+.title span:before{
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    background: #111;
+    height: 100%;
+    width: 100%;
+    z-index: -1;
+}
+.title:after{
+    content: '';
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: #eee;
+    height: 2px;
+    width: 100%;
+    right: 0;
+}
+
+.body{
+    display: flex;
+}

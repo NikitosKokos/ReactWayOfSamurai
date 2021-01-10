@@ -1,0 +1,33 @@
+.avatar{
+    flex: 0 0 50px;
+    width: 50px;
+    height: 50px;
+    object-fit: cover;
+    max-width: 100%;
+    border-radius: 50%;
+    overflow: hidden;
+}
+.text{
+    padding: 0px 0px 0px 10px;
+}
+.post{
+    display: flex;
+    margin: 0px 0px 10px 0px;
+}
+.post:last-child{
+    margin: 0px 0px 0px 0px;
+}
+.body{
+    display: flex;
+    flex: 1 1 auto;
+    padding: 0px 10px 0px 0px;
+}
+.likes{
+    flex: 0 0 auto;
+    color: #111;
+    font-size: 15px;
+}
+.likes span{
+    font-weight: 700;
+    font-size: 16px;
+}

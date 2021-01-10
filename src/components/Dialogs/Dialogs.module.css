@@ -1,0 +1,29 @@
+.dialogs{
+    display: flex;
+    height: 100%;
+    width: 100%;
+}
+.dialogsItems{
+    border-right: 2px solid #333;
+    display: flex;
+    flex-direction: column;
+    padding: 20px 0;
+}
+.dialog{
+    flex: 1 1 auto;
+    display: flex;
+    flex-direction: column;
+}
+.messages{
+    padding: 20px 30px;
+    background: #eee;
+    overflow: auto;
+    height: 100%;
+    min-height: auto;
+}
+.body{
+    min-height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}

@@ -1,0 +1,27 @@
+.item{
+    flex: 0 0 33.333%;
+    overflow: hidden;
+    text-align: center;
+    cursor: pointer;
+}
+
+.img{
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    overflow: hidden;
+    margin: 0 auto 5px auto;
+}
+.img img{
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+.name{
+    color: #eee;
+    font-weight: 500;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    -webkit-text-overflow: ellipsis;
+    overflow: hidden;
+}
