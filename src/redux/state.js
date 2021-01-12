@@ -1,3 +1,6 @@
+import dialogsReducer from "./dialogs-reducer";
+import headerReducer from "./header-reducer";
+import profileReducer from "./profile-reducer";
 
 let store = {
     _state: {
@@ -50,41 +53,20 @@ let store = {
         this._callSubscriber = observer;
     },
     
-    dispatch(action){
-      if(action.type === 'ADD-POST'){
-        let newPost = {
-            id: 5,
-            message: this._state.profilePage.newPostText,
-            likeCount: 0,
-        }
-        this._state.profilePage.posts.push(newPost);
-        this._state.profilePage.newPostText = '';
-        this._callSubscriber(this._state);
-      }else if(action.type === 'UPDATE-NEW-POST-TEXT'){
-        this._state.profilePage.newPostText = action.newText;
-        this._callSubscriber(this._state);
-      }else if(action.type === 'ADD-MES'){
-        let newMes = {
-            id: 5, 
-            text: this._state.dialogsPage.newMesText, 
-            avatar: 'https://buki.com.ua/data/files/news/15542215853893.jpg'
-        }
-    
-        this._state.dialogsPage.messages.push(newMes);
-        this._state.dialogsPage.newMesText = '';
-        this._callSubscriber(this._state);
-      }else if(action.type === 'UPDATE-NEW-MES-TEXT'){
-        this._state.dialogsPage.newMesText = action.newText;
-        this._callSubscriber(this._state);
-      }else if(action.type === 'CHANGE-STATE-MENU'){
-        this._state.sidebar.active = action.newState;
-        this._state.header.burgerActive = action.newState;
-        this._callSubscriber(this._state);
-      }
 
+    dispatch(action){
+        this._state.profilePage = profileReducer(this._state.profilePage, action);
+        this._state.dialogsPage = dialogsReducer(this._state.dialogsPage, action);
+        this._state.header =headerReducer({ header:this._state.header, sidebar: this._state.sidebar}, action);
+
+        this._callSubscriber(this._state);
     }
-    
 
 }
+
+
+
+
+
 
 export default store;

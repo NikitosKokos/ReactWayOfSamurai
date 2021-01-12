@@ -3,6 +3,7 @@ import {
   NavLink
 } from "react-router-dom";
 import Friends from './Friends/Friends';
+import {changeStateMenuActionCreator} from '../../redux/header-reducer';
 
 const Sidebar = (props) => {
     let asideClasses = s.aside;
@@ -11,10 +12,7 @@ const Sidebar = (props) => {
     }
 
     const closeMenu = () => {
-      props.dispatch({
-        type: 'CHANGE-STATE-MENU',
-        newState: false,
-      });
+      props.dispatch(changeStateMenuActionCreator(false));
     }
     return(
         <aside className={asideClasses}>
