@@ -1,18 +1,33 @@
 .dialogs{
     display: flex;
-    height: 100%;
+    height: calc(100vh - 140px);
     width: 100%;
 }
 .dialogsItems{
-    border-right: 2px solid #333;
+    border-right: 2px solid #222831;
     display: flex;
     flex-direction: column;
     padding: 20px 0;
 }
+
 .dialog{
     flex: 1 1 auto;
     display: flex;
     flex-direction: column;
+    overflow-y: auto;
+    max-height: 100%;
+}
+@media (max-width: 600px){
+    .dialogsItems{
+        flex: 0 0 100%;
+        width: 100%;
+    } 
+    .dialog{
+        flex: 0 0 100%;
+        display: flex;
+        flex-direction: column;
+        transform: translateX(15px);
+    }
 }
 .messages{
     padding: 20px 30px;

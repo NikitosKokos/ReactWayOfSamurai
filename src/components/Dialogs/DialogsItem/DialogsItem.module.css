@@ -1,17 +1,17 @@
 .dialog{
     font-weight: 500;
-    font-size: 18px;
-    color: #111;
+    font-size: 22px;
+    color: #393e46;
     text-decoration: none;
     padding: 10px 60px;
     background: #fff;
     transition: all .3s ease-in-out;
 }
 .dialog.active{
-    background: #111;
+    background: #393e46;
     color: #fff;
 }
 .dialog:hover{
-    background: #111;
+    background: #393e46;
     color: #fff;
 }

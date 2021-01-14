@@ -1,5 +1,5 @@
 .newpost{
-    background: #111;
+    background: #393e46;
     padding: 30px;
 }
 .textarea{
@@ -19,26 +19,49 @@
     font-size: 15px;
     color: #eee;
     background: transparent;
-    border: 2px solid #fff;
+    border: 2px solid #00adb5;
+}
+.textarea textarea::placeholder{
+    color: #eee;
 }
 .label{
-    font-size: 20px;
-    font-weight: 500;
-    color: #fff;
+    font-size: 24px;
+    letter-spacing: 1px;
+    color: #eee;
     display: inline-block;
-    margin: 0px 0px 5px 0px;
+    margin: 0px 0px 10px 0px;
 }
 .btn{
     height: 40px;
     box-shadow: none;
     border-radius: 20px;
     border: none;
-    padding: 0 20px;
+    padding: 0 30px;
     font-weight: 500;
-    background: #fff;
+    color: #fff;
+    background: #00adb5;
     display: flex;
     justify-content: center;
     align-items: center;
-    font-size: 16px;
+    font-size: 22px;
     cursor: pointer;
+}
+span{
+    position: relative;
+}
+span:before{
+    content: '';
+    position: absolute;
+    bottom: -1px;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background: currentColor;
+    border-radius: 20px;
+    transition: all .3s ease-in-out;
+}
+@media (min-width: 992px){
+    .btn:hover span::before{
+        width: 100%;
+ }
 }

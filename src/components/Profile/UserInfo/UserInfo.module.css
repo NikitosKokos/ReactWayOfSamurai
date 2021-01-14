@@ -39,10 +39,13 @@
 
 .name{
   font-weight: 700;
-  font-size: 24px;
+  font-size: 26px;
+  letter-spacing: 1px;
   line-height: 1.1;
+  color: #222831;
 }
 .about{
-    font-size: 16px;
+    font-size: 18px;
+    letter-spacing: .5px;
     color: #333;
 }

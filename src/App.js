@@ -1,5 +1,4 @@
 import './App.css';
-import Dialogs from './components/Dialogs/Dialogs';
 import Header from './components/Header/Header';
 import Profile from './components/Profile/Profile';
 import Sidebar from './components/Sidebar/Sidebar';
@@ -8,6 +7,7 @@ import {
   Switch,
   Route
 } from "react-router-dom";
+import DialogsContainer from './components/Dialogs/DialogsContainer';
 
 
 const App = (props) => {
@@ -19,10 +19,10 @@ const App = (props) => {
         <main className="main">
         <Switch>
           <Route path="/profile">
-             <Profile state={props.state.profilePage} dispatch={props.dispatch} />
+             <Profile store={props.store}/>
           </Route>
           <Route path="/messages">
-          <Dialogs state={props.state.dialogsPage} dispatch={props.dispatch} />
+          <DialogsContainer store={props.store} />
           </Route>
           <Route path="/news">
            

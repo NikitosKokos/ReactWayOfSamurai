@@ -1,7 +1,7 @@
 .header{
     grid-area: header;
-    background: #111;
-    box-shadow: 2px 2px 7px #333;
+    background: #222831;
+    box-shadow: 2px 2px 7px #222831;
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -9,7 +9,8 @@
   }
   .logo{
     height: 100%;
-    font-size: 28px;
+    font-size: 35px;
+    letter-spacing: 2px;
     color: #fff;
     font-weight: 700;
     display: flex;
@@ -40,6 +41,7 @@
       left: 0;
       top: 9px;
       transition: all ease 0.3s;
+      border-radius: 10px;
    }
     .burger:before {
       content: "";
@@ -50,6 +52,7 @@
       left: 0;
       top: 0;
       transition: all ease 0.3s;
+      border-radius: 10px;
    }
     .burger:after {
       content: "";
@@ -60,6 +63,7 @@
       left: 0;
       bottom: 0;
       transition: all ease 0.3s;
+      border-radius: 10px;
    }
     .burger.active:before {
       transform: rotate(-45deg);

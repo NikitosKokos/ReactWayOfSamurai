@@ -8,7 +8,10 @@
     overflow: hidden;
 }
 .text{
+    color: #222831;
     padding: 0px 0px 0px 10px;
+    font-size: 16px;
+    line-height: 1.4;
 }
 .post{
     display: flex;
@@ -24,10 +27,11 @@
 }
 .likes{
     flex: 0 0 auto;
-    color: #111;
-    font-size: 15px;
+    color: #222831;
+    font-size: 16px;
 }
 .likes span{
     font-weight: 700;
-    font-size: 16px;
+    font-size: 18px;
+    color: #00adb5;
 }

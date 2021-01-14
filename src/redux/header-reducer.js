@@ -1,19 +1,21 @@
-const CHANGE_STATE_MENU = 'CHANGE-STATE-MENU';
+const CHANGE_STATE_BURG = 'CHANGE-STATE-BURG';
 
-export const headerReducer = (state, action) => {
+let inintialState = {
+    burgerActive: false,
+};
+export const headerReducer = (state = inintialState, action) => {
     switch(action.type){
-        case CHANGE_STATE_MENU:
-            state.header.active = action.newState;
-            state.sidebar.burgerActive = action.newState;
+        case CHANGE_STATE_BURG:
+            state.burgerActive = action.newState;
             return state;
         default: 
             return state;
     }
 }
 
-export const changeStateMenuActionCreator = (thisState) => {
+export const changeStateBurgActionCreator = (thisState) => {
     return {
-        type: CHANGE_STATE_MENU,
+        type: CHANGE_STATE_BURG,
         newState: thisState,
     }
 };

@@ -6,12 +6,13 @@
 .body{
     padding: 15px 20px;
     border-radius: 8px;
-    background: #111;
+    background: #393e46;
 }
 .text{
-    color: #fff;
+    color: #eee;
     font-weight: 500;
-    font-size: 16px;
+    font-size: 18px;
+    letter-spacing: .5px;
 }
 .img{
     flex: 0 0 40px;

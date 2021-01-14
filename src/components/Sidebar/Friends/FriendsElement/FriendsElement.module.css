@@ -24,4 +24,5 @@
     text-overflow: ellipsis;
     -webkit-text-overflow: ellipsis;
     overflow: hidden;
+    letter-spacing: 1px;
 }

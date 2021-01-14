@@ -1,9 +1,10 @@
 .aside{
     grid-area: sidebar;
-    background: #111;
+    align-self: start;
+    background: #222831;
     color: #fff;
-    box-shadow: 2px 2px 7px #333;
-    padding: 0px 0px 20px 0px;
+    box-shadow: 2px 2px 7px #222831;
+    padding: 20px 0px;
 }
 
 @media (max-width: 992px){
@@ -30,8 +31,8 @@
 }
 
 .link{
-    font-size: 24px;
-    font-weight: 700;
+    font-size: 26px;
+    letter-spacing: 1px;
     color: #fff;
     text-decoration: none;
     transition: all .3s ease-in-out;
@@ -41,52 +42,59 @@
     justify-content: center;
     width: 100%;
     padding: 10px 0;
+    transition: all .3s ease-in-out;
 }
-
+.link span{
+    position: relative;
+    z-index: 2;
+    transition: all .3s ease-in-out;
+}
 .linkSet{
     margin: 60px 0px 0px 0px;
 }
-@media (min-width: 1200px){
-
-.link::after{
-    content:'';
-    position: absolute;
-    top: 50%;
-    right: -20px;
-    transform: translateY(-50%);
-    width: 20px;
-    height: 2px;
-    background: #fff;
-    transition: all .3s ease-in-out;
-}
-.link::before{
-    content:'';
-    position: absolute;
-    top: 50%;
-    left: -20px;
-    transform: translateY(-50%);
-    width: 20px;
-    height: 2px;
-    background: #fff;
-    transition: all .3s ease-in-out;
-}
-.link:hover::after{
-    right: 0;
-}
-.link:hover::before{
-    left: 0;
-}
-
-.link.active::after{
-    right: 0;
-}
-.link.active::before{
-    left: 0;
-}
-}
-@media (max-width: 1200px){
-    .link.active{
+    .link::after{
+        content:'';
+        position: absolute;
+        top: 50%;
+        right: -20px;
+        transform: translateY(-50%);
+        width: 20px;
+        height: calc(100% - 5px);
         background: #fff;
-        color: #111;
-    }    
-}
+        transition: all .3s ease-in-out, height .1s ease-in-out;
+        border-radius: 999px 0 0 999px;
+    }
+    .link::before{
+        content:'';
+        position: absolute;
+        top: 50%;
+        left: -20px;
+        transform: translateY(-50%);
+        width: 20px;
+        height: calc(100% - 5px);
+        border-radius: 0 999px 999px 0;
+        background: #fff;
+        transition: all .3s ease-in-out, height .1s ease-in-out;
+    }
+    @media (min-width: 992px){
+        .link:hover::after{
+            right: 0;
+        }
+        .link:hover::before{
+            left: 0;
+        }
+    }
+
+    .link.active::after{
+        right: 0;
+        width: 100%;
+        height: 100%;
+    }
+    .link.active::before{
+        left: 0;
+        width: 100%;
+        height: 100%;
+    }
+    .link.active span{
+        color: #222831;
+    }

@@ -5,9 +5,10 @@ import SendMessage from './SendMessage/SendMessage';
 
 
 const Dialogs = (props) => {
-
-    let dialogsElements = props.state.dialogs.map(d => <DialogsItem name={d.name} id={d.id} />);
-    let messagesElements = props.state.messages.map(m => <Message text={m.text} avatar={m.avatar} />);
+    let state = props.dialogsPage;
+    let dialogsElements = state.dialogs.map(d => <DialogsItem name={d.name} id={d.id} />);
+    let messagesElements = state.messages.map(m => <Message text={m.text} avatar={m.avatar} />);
+    let newMesText = state.newMesText;
     
     return(
         <>
@@ -21,7 +22,7 @@ const Dialogs = (props) => {
                             {messagesElements}
                         </div>
                     </div>
-                    <SendMessage newMesText={props.state.newMesText} dispatch={props.dispatch} />
+                    <SendMessage newMesText={newMesText} updateNewMesText={props.updateNewMesText} addMes={props.addMes} />
                 </div>
             </div>
         </>
