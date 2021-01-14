@@ -14,15 +14,15 @@ const App = (props) => {
   return (
     <Router>
       <div className="wrapper">
-      <Header burgerActive={props.state.header.burgerActive} dispatch={props.dispatch} />
-        <Sidebar state={props.state.sidebar} dispatch={props.dispatch} />
+      <Header/>
+        <Sidebar/>
         <main className="main">
         <Switch>
           <Route path="/profile">
-             <Profile store={props.store}/>
+             <Profile/>
           </Route>
           <Route path="/messages">
-          <DialogsContainer store={props.store} />
+          <DialogsContainer />
           </Route>
           <Route path="/news">
            

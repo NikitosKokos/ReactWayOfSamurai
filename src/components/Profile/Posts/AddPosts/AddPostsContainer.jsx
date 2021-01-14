@@ -4,17 +4,22 @@ import {addPostActionCreator,updateNewPostTextActionCreator} from '../../../../r
 
 
 const AddPostsContainer = (props) => {
-    let state = props.store.getState();
+return(
+    <StoreContext.Consumer> {
+    (store) => {
     const addPost = () => {
-        props.store.dispatch(addPostActionCreator());
+        store.dispatch(addPostActionCreator());
     }
 
     const onPostChange = (text) => {
-        props.store.dispatch(updateNewPostTextActionCreator(text));
+        store.dispatch(updateNewPostTextActionCreator(text));
     }
 
-    return(
-        <AddPosts updateNewPostText={onPostChange} addPost={addPost} newPostText={state.profilePage.newPostText} />
+    
+    return <AddPosts updateNewPostText={onPostChange} addPost={addPost} newPostText={store.getState().profilePage.newPostText} />    
+            }
+            
+       } </StoreContext.Consumer>
     );
 }
 

@@ -6,7 +6,7 @@ const Profile = (props) => {
     return(
         <main className={s.main}>
             <UserInfo/>
-            <Posts store={props.store} />
+            <Posts />
       </main>
     );
 }

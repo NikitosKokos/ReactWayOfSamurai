@@ -4,15 +4,21 @@ import {addMesActionCreator,updateNewMesTextActionCreator} from '../../redux/dia
 
 
 const DialogsContainer = (props) => {
-    let state = props.store.getState();
+return(<StoreContext.Consuner> {
+    (store) => {
+    let state = store.getState();
     const onMesChange = (text) => {
-        props.store.dispatch(updateNewMesTextActionCreator(text));
+        store.dispatch(updateNewMesTextActionCreator(text));
     }
     const addMessage = () => {
-        props.store.dispatch(addMesActionCreator());
+        store.dispatch(addMesActionCreator());
     }
-    return(
-        <Dialogs updateNewMesText={onMesChange} addMes={addMessage} dialogsPage={state.dialogsPage} /> 
+    
+        
+    return <Dialogs updateNewMesText={onMesChange} addMes={addMessage} dialogsPage={state.dialogsPage} />
+            }
+        }
+        </StoreContext.Consuner> 
     );
 }
 
