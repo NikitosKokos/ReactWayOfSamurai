@@ -3,17 +3,15 @@ import {
   NavLink
 } from "react-router-dom";
 import Friends from './Friends/Friends';
-import {changeStateMenuActionCreator} from '../../redux/sidebar-reducer';
-import {changeStateBurgActionCreator} from '../../redux/header-reducer';
 const Sidebar = (props) => {
     let asideClasses = s.aside;
-    if (props.state.active) {
+    if (props.active) {
       asideClasses += ` ${s.active}`;
     }
 
     const closeMenu = () => {
-      props.dispatch(changeStateMenuActionCreator(false));
-      props.dispatch(changeStateBurgActionCreator(false));
+      props.changeStateMenu(false);
+      props.changeStateMenu(false);
     }
     return(
         <aside className={asideClasses}>
@@ -24,7 +22,7 @@ const Sidebar = (props) => {
             <li><NavLink to="/music" onClick={closeMenu} className={s.link}  activeClassName={s.active}><span>Music</span></NavLink></li>
             <li><NavLink to="/settings" onClick={closeMenu} className={`${s.link} ${s.linkSet}`}  activeClassName={s.active}><span>Settings</span></NavLink></li>
           </ul>
-          <Friends friends={props.state.friends} />
+          <Friends friends={props.friends} />
       </aside>
     );
 }
