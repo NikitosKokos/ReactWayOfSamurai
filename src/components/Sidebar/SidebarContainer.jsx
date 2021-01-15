@@ -16,7 +16,10 @@ const mapDispatchToProps = (dispatch) => {
   return{
     changeStateMenu: (newState) => {
       dispatch(changeStateMenuActionCreator(newState));
-  }
+  },
+  changeStateBurg: (newState) => {
+    dispatch(changeStateBurgActionCreator(newState));
+},
 }
 }
 

@@ -6,8 +6,10 @@ let inintialState = {
 export const headerReducer = (state = inintialState, action) => {
     switch(action.type){
         case CHANGE_STATE_BURG:
-            state.burgerActive = action.newState;
-            return state;
+            return {
+                ...state,
+                burgerActive: action.newState,
+            }
         default: 
             return state;
     }

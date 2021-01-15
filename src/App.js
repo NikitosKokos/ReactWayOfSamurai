@@ -1,5 +1,5 @@
 import './App.css';
-import Header from './components/Header/Header';
+import HeaderContainer from './components/Header/HeaderContainer';
 import Profile from './components/Profile/Profile';
 import SidebarContainer from './components/Sidebar/SidebarContainer';
 import {
@@ -14,12 +14,12 @@ const App = (props) => {
   return (
     <Router>
       <div className="wrapper">
-      <Header/>
+      <HeaderContainer/>
         <SidebarContainer/>
         <main className="main">
         <Switch>
           <Route path="/profile">
-             <Profile/>
+             <Profile />
           </Route>
           <Route path="/messages">
           <DialogsContainer />

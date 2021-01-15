@@ -19,21 +19,22 @@ let inintialState = {
     ], 
 };
 const dialogsReducer = (state = inintialState, action) => {
-
     switch(action.type){
         case ADD_MES:
-            let newMes = {
+            return {
+                ...state,
+                newMesText: '',
+                messages: [ ...state.messages, {
                 id: 5, 
                 text: state.newMesText, 
                 avatar: 'https://buki.com.ua/data/files/news/15542215853893.jpg'
+            }]
             }
-        
-            state.messages.push(newMes);
-            state.newMesText = '';
-            return state;
         case UPDATE_NEW_MES_TEXT:
-            state.newMesText = action.newText;
-            return state;
+            return {
+                ...state,
+                newMesText: action.newText,
+            }
         default: 
             return state;
 }

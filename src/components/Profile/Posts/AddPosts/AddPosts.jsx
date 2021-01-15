@@ -6,13 +6,11 @@ import {addPostActionCreator,updateNewPostTextActionCreator} from '../../../../r
 const AddPosts = (props) => {
     const postElement = React.createRef();
     const onAddPost = () => {
-        // props.dispatch(addPostActionCreator());
         props.addPost();
     }
 
 const onPostChange = () => {
     const text = postElement.current.value;
-    // props.dispatch(updateNewPostTextActionCreator(text));
     props.updateNewPostText(text);
 }
 

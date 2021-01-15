@@ -6,8 +6,8 @@ import SendMessage from './SendMessage/SendMessage';
 
 const Dialogs = (props) => {
     let state = props.dialogsPage;
-    let dialogsElements = state.dialogs.map(d => <DialogsItem name={d.name} id={d.id} />);
-    let messagesElements = state.messages.map(m => <Message text={m.text} avatar={m.avatar} />);
+    let dialogsElements = state.dialogs.map(d => <DialogsItem name={d.name} key={d.id} id={d.id} />);
+    let messagesElements = state.messages.map(m => <Message text={m.text} key={m.id} avatar={m.avatar} />);
     let newMesText = state.newMesText;
     
     return(

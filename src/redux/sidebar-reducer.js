@@ -11,8 +11,10 @@ let inintialState = {
 export const sidebarReducer = (state = inintialState, action) => {
     switch(action.type){
         case CHANGE_STATE_MENU:
-            state.active = action.newState;
-            return state;
+            return {
+                ...state,
+                active: action.newState
+            }
         default: 
             return state;
     }

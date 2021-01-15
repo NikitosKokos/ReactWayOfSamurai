@@ -1,12 +1,10 @@
 import s from './Header.module.css';
-import {changeStateBurgActionCreator} from '../../redux/header-reducer';
-import {changeStateMenuActionCreator} from '../../redux/sidebar-reducer';
 
 const Header = (props) => {
   
   const showMenu = () => {
-    props.dispatch(changeStateMenuActionCreator(!props.burgerActive));
-    props.dispatch(changeStateBurgActionCreator(!props.burgerActive));
+    props.changeStateMenu(!props.burgerActive);
+    props.changeStateBurg(!props.burgerActive);
   }
 
   let burgerClasses = s.burger;

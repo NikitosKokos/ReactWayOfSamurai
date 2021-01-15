@@ -11,7 +11,7 @@ const Sidebar = (props) => {
 
     const closeMenu = () => {
       props.changeStateMenu(false);
-      props.changeStateMenu(false);
+      props.changeStateBurg(false);
     }
     return(
         <aside className={asideClasses}>
