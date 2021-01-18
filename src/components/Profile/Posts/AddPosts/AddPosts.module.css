@@ -46,10 +46,10 @@
     font-size: 22px;
     cursor: pointer;
 }
-span{
+.btn span{
     position: relative;
 }
-span:before{
+.btn span:before{
     content: '';
     position: absolute;
     bottom: -1px;

@@ -8,6 +8,7 @@ import {
   Route
 } from "react-router-dom";
 import DialogsContainer from './components/Dialogs/DialogsContainer';
+import UsersContainer from './components/Users/UsersContainer';
 
 
 const App = (props) => {
@@ -32,6 +33,9 @@ const App = (props) => {
           </Route>
           <Route path="/settings">
            
+          </Route>
+          <Route path="/users">
+            <UsersContainer />
           </Route>
         </Switch>
         </main>

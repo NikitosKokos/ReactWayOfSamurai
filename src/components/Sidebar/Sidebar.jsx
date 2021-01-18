@@ -19,6 +19,7 @@ const Sidebar = (props) => {
             <li><NavLink to="/profile" onClick={closeMenu} className={s.link} activeClassName={s.active}><span>Profile</span></NavLink></li>
             <li><NavLink to="/messages" onClick={closeMenu} className={s.link}  activeClassName={s.active}><span>Messages</span></NavLink></li>
             <li><NavLink to="/news" onClick={closeMenu} className={s.link}  activeClassName={s.active}><span>News</span></NavLink></li>
+            <li><NavLink to="/users" onClick={closeMenu} className={s.link}  activeClassName={s.active}><span>Users</span></NavLink></li>
             <li><NavLink to="/music" onClick={closeMenu} className={s.link}  activeClassName={s.active}><span>Music</span></NavLink></li>
             <li><NavLink to="/settings" onClick={closeMenu} className={`${s.link} ${s.linkSet}`}  activeClassName={s.active}><span>Settings</span></NavLink></li>
           </ul>
