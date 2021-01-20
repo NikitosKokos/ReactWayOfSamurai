@@ -3,7 +3,7 @@ const CHANGE_STATE_BURG = 'CHANGE-STATE-BURG';
 let inintialState = {
     burgerActive: false,
 };
-export const headerReducer = (state = inintialState, action) => {
+const headerReducer = (state = inintialState, action) => {
     switch(action.type){
         case CHANGE_STATE_BURG:
             return {
@@ -15,7 +15,7 @@ export const headerReducer = (state = inintialState, action) => {
     }
 }
 
-export const changeStateBurgActionCreator = (thisState) => {
+export const changeStateBurg = (thisState) => {
     return {
         type: CHANGE_STATE_BURG,
         newState: thisState,

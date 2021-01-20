@@ -1,5 +1,5 @@
 import Dialogs from './Dialogs';
-import {addMesActionCreator,updateNewMesTextActionCreator} from '../../redux/dialogs-reducer';
+import {addMes,updateNewMesText} from '../../redux/dialogs-reducer';
 import { connect } from 'react-redux';
 
 
@@ -10,17 +10,10 @@ const mapStateToProps = (state) => {
     }
 }
 
-const mapDispatchToProps = (dispatch) => {
-    return{
-        updateNewMesText: (text) => {
-            dispatch(updateNewMesTextActionCreator(text));
-        },
-        addMes: () => {
-            dispatch(addMesActionCreator());
-        },
-    }
-}
 
-const DialogsContainer = connect(mapStateToProps, mapDispatchToProps)(Dialogs);
+const DialogsContainer = connect(mapStateToProps, {
+    updateNewMesText,
+    addMes,
+})(Dialogs);
 
 export default DialogsContainer;

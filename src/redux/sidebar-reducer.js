@@ -20,7 +20,7 @@ export const sidebarReducer = (state = inintialState, action) => {
     }
 }
 
-export const changeStateMenuActionCreator = (thisState) => {
+export const changeStateMenu = (thisState) => {
     return {
         type: CHANGE_STATE_MENU,
         newState: thisState,

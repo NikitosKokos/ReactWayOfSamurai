@@ -40,8 +40,8 @@ const dialogsReducer = (state = inintialState, action) => {
 }
 }
 
-export const addMesActionCreator = () => ({ type: ADD_MES });
-export const updateNewMesTextActionCreator = (text) => {
+export const addMes = () => ({ type: ADD_MES });
+export const updateNewMesText = (text) => {
     return {
         type: UPDATE_NEW_MES_TEXT,
         newText: text,

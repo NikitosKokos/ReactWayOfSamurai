@@ -1,5 +1,5 @@
-import {changeStateBurgActionCreator} from '../../redux/header-reducer';
-import {changeStateMenuActionCreator} from '../../redux/sidebar-reducer';
+import {changeStateBurg} from '../../redux/header-reducer';
+import {changeStateMenu} from '../../redux/sidebar-reducer';
 import { connect } from 'react-redux';
 import Header from './Header';
 
@@ -15,17 +15,10 @@ import Header from './Header';
       }
   }
   
-  const mapDispatchToProps = (dispatch) => {
-      return{
-        changeStateMenu: (newState) => {
-          dispatch(changeStateMenuActionCreator(newState))
-        },
-        changeStateBurg: (newState) => {
-          dispatch(changeStateBurgActionCreator(newState))
-        }
-  }
-}
 
-  const PostsContainer = connect(mapStateToProps, mapDispatchToProps)(Header);
+  const PostsContainer = connect(mapStateToProps, {
+    changeStateMenu,
+    changeStateBurg,
+})(Header);
   
   export default PostsContainer;

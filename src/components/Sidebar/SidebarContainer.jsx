@@ -1,6 +1,6 @@
 import Friends from './Friends/Friends';
-import {changeStateMenuActionCreator} from '../../redux/sidebar-reducer';
-import {changeStateBurgActionCreator} from '../../redux/header-reducer';
+import {changeStateMenu} from '../../redux/sidebar-reducer';
+import {changeStateBurg} from '../../redux/header-reducer';
 import { connect } from 'react-redux';
 import Sidebar from './Sidebar';
 
@@ -12,17 +12,10 @@ const mapStateToProps = (state) => {
   }
 }
 
-const mapDispatchToProps = (dispatch) => {
-  return{
-    changeStateMenu: (newState) => {
-      dispatch(changeStateMenuActionCreator(newState));
-  },
-  changeStateBurg: (newState) => {
-    dispatch(changeStateBurgActionCreator(newState));
-},
-}
-}
 
-const SidebarContainer = connect(mapStateToProps, mapDispatchToProps)(Sidebar);
+const SidebarContainer = connect(mapStateToProps, {
+  changeStateMenu,
+  changeStateBurg,
+})(Sidebar);
 
 export default SidebarContainer;
