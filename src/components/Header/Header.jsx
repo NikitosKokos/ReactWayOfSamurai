@@ -1,3 +1,4 @@
+import { NavLink } from 'react-router-dom';
 import s from './Header.module.css';
 
 const Header = (props) => {
@@ -13,11 +14,20 @@ const Header = (props) => {
   }
     return(
         <header className={s.header} >
-          <div className={s.logo}>
-            Matrix
-          </div>
-          <div className={burgerClasses} onClick={showMenu} >
-            <span></span>
+          <NavLink to='/' className={s.logo}>
+            Look For Job
+          </NavLink>
+          <div className={s.info} >
+            <div className={s.loginWrap}>
+              { props.isAuth ? 
+              <div className={s.profile}> {props.login} </div>
+               : <NavLink to='/login' className={s.login} >
+                  login
+              </NavLink>}
+            </div>
+            <div className={burgerClasses} onClick={showMenu} >
+              <span></span>
+            </div>
           </div>
       </header>
     );

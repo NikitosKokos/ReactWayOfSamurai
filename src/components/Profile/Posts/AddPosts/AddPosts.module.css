@@ -1,17 +1,12 @@
 .newpost{
     background: #393e46;
     padding: 30px;
+    margin: 0 -10px;
 }
 .textarea{
-    /* position: relative; */
-    /* width: 100%;
-    height: 80px; */
     margin: 0px 0px 10px 0px;
 }
 .textarea textarea{
-    /* position: absolute;
-    top: 0;
-    left: 0; */
     resize: none;
     border-radius: 0;
     width: 100%;

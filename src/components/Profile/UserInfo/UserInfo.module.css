@@ -1,11 +1,9 @@
 .info{
-    padding: 0px 0px 20px 0px;
 }
 
 .bg{
-    width: 100%;
     height: 180px;
-    margin: 0px 0px 30px 0px;
+    margin: 0px -10px;
 }
 .bg img{
         object-fit: cover;
@@ -29,23 +27,104 @@
 }
 .user{
   display: flex;
-  align-items: center;
-  padding: 0px 20px
+  padding: 40px 0px;
 }
 
 .text{
     padding: 0px 0px 0px 20px;
+    flex: 1 1 auto;
 }
 
 .name{
+  display: flex;
+  align-items: center;
+  position: relative;
+}
+.fullName{
   font-weight: 700;
   font-size: 26px;
   letter-spacing: 1px;
   line-height: 1.1;
-  color: #222831;
+  color: #222831;  
+}
+.job{
+    margin: 0px 0px 0px 10px;
+    position: relative;
+}
+.jobdescr{
+  position: absolute;
+  top: 0;
+  right: 0;
+  transform: translate(100% , -100%);
+  font-size: 16px;
+  background: #fff;
+  padding: 10px 10px;
+  white-space: nowrap;
+  border-radius: 8px;
+  transition: all .3s ease-in-out;
+  opacity: 0;
+  visibility: hidden;
+}
+
+.name svg{
+  width: auto;
+  height: 25px;
+}
+
+  .job:hover .jobdescr{
+    opacity: 1;
+    visibility: visible;
+  }
+  .job:hover svg path{
+    fill: #00adb5;
+ }
+
+.name svg path{
+  transition: all .3s ease-in-out;
 }
 .about{
     font-size: 18px;
     letter-spacing: .5px;
     color: #333;
+    line-height: 1.3;
+}
+
+
+@media (max-width: 767px){
+  .jobdescr{
+    position: absolute;
+    top: 0;
+    right: auto;
+    left: 0;
+    transform: translate(0% , 0%);
+    font-size: 16px;
+    background: #fff;
+    padding: 10px 10px;
+    white-space: normal;
+    border-radius: 8px;
+    transition: all .3s ease-in-out;
+    opacity: 0;
+    visibility: hidden;
+  }
+  .job{
+    position: static;
+  }
+  .bg{
+    height: 140px;
+  }
+  .user{
+    padding: 30px 0;
+  }
+}
+@media (max-width: 480px){
+  .fullName{
+    font-size: 20px;
+  }
+  .about{
+    font-size: 16px;
+    letter-spacing: .5px;
+  }
+  .text{
+    padding: 0px 0px 0px 10px;
+  }
 }

@@ -1,6 +1,6 @@
 import './App.css';
 import HeaderContainer from './components/Header/HeaderContainer';
-import Profile from './components/Profile/Profile';
+import ProfileContainer from './components/Profile/ProfileContainer';
 import SidebarContainer from './components/Sidebar/SidebarContainer';
 import {
   BrowserRouter as Router,
@@ -19,8 +19,8 @@ const App = (props) => {
         <SidebarContainer/>
         <main className="main">
         <Switch>
-          <Route path="/profile">
-             <Profile />
+          <Route path="/profile/:userId?">
+             <ProfileContainer />
           </Route>
           <Route path="/messages">
           <DialogsContainer />

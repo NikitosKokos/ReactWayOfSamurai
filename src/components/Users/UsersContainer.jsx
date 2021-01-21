@@ -47,15 +47,14 @@ class UsersContainer extends React.Component {
 }
 
 
-const mapStateToProps = (state) => {
-    return {
+const mapStateToProps = (state) => ({
         users: state.usersPage.users,
         pageSize: state.usersPage.pageSize,
         totalUsersCount: state.usersPage.totalUsersCount,
         currentPage: state.usersPage.currentPage,
         isFetching: state.usersPage.isFetching,
     }
-}
+)
 
 
 export default connect(mapStateToProps,{

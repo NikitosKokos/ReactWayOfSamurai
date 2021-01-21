@@ -53,6 +53,7 @@
 
 .main{
   grid-area: main;
+  align-self: start;
   background: #fff;
   box-shadow: 2px 2px 7px #222831;
   overflow: hidden;

@@ -5,6 +5,12 @@
     cursor: pointer;
 }
 
+@media (min-width: 992px){
+    .item:hover .name{
+        color: #00adb5;
+ }
+}
+
 .img{
     width: 60px;
     height: 60px;
@@ -25,4 +31,5 @@
     -webkit-text-overflow: ellipsis;
     overflow: hidden;
     letter-spacing: 1px;
+    transition: all .3s ease-in-out;
 }

@@ -1,6 +1,6 @@
 import Friends from './Friends/Friends';
 import {changeStateMenu} from '../../redux/sidebar-reducer';
-import {changeStateBurg} from '../../redux/header-reducer';
+import {changeStateBurg} from '../../redux/auth-reducer';
 import { connect } from 'react-redux';
 import Sidebar from './Sidebar';
 
