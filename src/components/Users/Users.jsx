@@ -2,6 +2,7 @@ import React from 'react'
 import s from './Users.module.css';
 import userPhoto from '../../assets/img/user.png'
 import { NavLink } from 'react-router-dom';
+import * as axios from 'axios';
 
 
 const Users = (props) => {
@@ -23,7 +24,30 @@ const Users = (props) => {
                     <div className={s.avatar} >
                         <NavLink to={`/profile/${u.id}`}><img src={u.photos.small != null ? u.photos.small : userPhoto}/></NavLink>
                     </div>
-                    {u.followed ? <button className={s.btn} onClick={() => props.unfollow(u.id)}><span>unfollow</span></button> : <button className={s.btn} onClick={() => props.follow(u.id)} ><span>follow</span></button>}
+                    {u.followed 
+                    ? <button className={s.btn} onClick={() => {
+                        axios.delete(`https://social-network.samuraijs.com/api/1.0/follow/${u.id}`,{
+                            withCredentials: true,
+                            headers: {
+                              'API-KEY': 'cab77a4f-56ff-4ac1-961e-6454b63eced2'},
+                          }).then(response => {
+                            if(response.data.resultCode === 0){
+                                props.unfollow(u.id);
+                            }
+                        });
+                    }}><span>unfollow</span></button> 
+                    : <button className={s.btn} onClick={() => {
+                        axios.post(`https://social-network.samuraijs.com/api/1.0/follow/${u.id}`,{},{
+                            withCredentials: true,
+                            headers: {
+                                'API-KEY': 'cab77a4f-56ff-4ac1-961e-6454b63eced2'},
+                          }).then(response => {
+                            if(response.data.resultCode === 0){
+                                props.follow(u.id);
+                            }
+                        });
+                        
+                    }} ><span>follow</span></button>}
                 </div>
                 <div className={s.body} >
                 <div className={s.info} >
