@@ -75,6 +75,9 @@
         width: 100%;
  }
 }
+.btn:disabled{
+    background: #008086;
+}
 
 .pagination{
     display: flex;
