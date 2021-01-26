@@ -94,11 +94,30 @@
    color: #222831;
    height: 50px;
    border-radius: 25px;
-   padding: 0 20px;
+   padding: 0 25px;
    display: flex;
    justify-content: center;
    align-items: center;
-   font-size: 22px;
+   font-size: 20px;
    font-weight: 500;
-   letter-spacing: 1px;
+   letter-spacing: 2px;
  }
+ .login span{
+  position: relative;
+}
+.login span:before{
+  content: '';
+  position: absolute;
+  bottom: -1px;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background: currentColor;
+  border-radius: 20px;
+  transition: all .3s ease-in-out;
+}
+@media (min-width: 992px){
+  .login:hover span::before{
+      width: 100%;
+}
+}

@@ -1,3 +1,5 @@
+import { userAPI } from "../api/api";
+
 const CHANGE_STATE_BURG = 'CHANGE-STATE-BURG';
 const SET_USER_DATA = 'SET-USER-DATA';
 
@@ -40,5 +42,14 @@ export const setAuthUserData = (id, email, login) => {
         data: {id, email, login},
     }
 };
+
+export const authUser = () => (dispatch) => {
+    userAPI.auth().then(response => {
+        if(response.resultCode === 0){
+            const {id, email, login} = response.data;
+            dispatch(setAuthUserData(id, email, login));
+        }
+    });
+}
 
 export default authReducer;
