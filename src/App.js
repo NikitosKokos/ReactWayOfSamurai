@@ -9,6 +9,7 @@ import {
 } from "react-router-dom";
 import DialogsContainer from './components/Dialogs/DialogsContainer';
 import UsersContainer from './components/Users/UsersContainer';
+import Login from './components/Login/Login';
 
 
 const App = (props) => {
@@ -36,6 +37,9 @@ const App = (props) => {
           </Route>
           <Route path="/users">
             <UsersContainer />
+          </Route>
+          <Route path="/login">
+            <Login />
           </Route>
         </Switch>
         </main>
