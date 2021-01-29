@@ -1,6 +1,7 @@
 import Preloader from '../../common/Preloader/Preloader';
 import s from './UserInfo.module.css';
 import userPhoto from '../../../assets/img/user.png'
+import ProfileStatus from './ProfileStatus/ProfileStatus';
 
 const UserInfo = (props) => {
     if(!props.profile){
@@ -22,6 +23,7 @@ const UserInfo = (props) => {
                         
                         
                     </div> 
+                    <ProfileStatus status={'hello'} />
                     <div className={s.about}>
                         {props.profile.aboutMe}
                     </div>

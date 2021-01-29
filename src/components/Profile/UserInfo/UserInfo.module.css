@@ -82,12 +82,6 @@
 .name svg path{
   transition: all .3s ease-in-out;
 }
-.about{
-    font-size: 18px;
-    letter-spacing: .5px;
-    color: #333;
-    line-height: 1.3;
-}
 
 
 @media (max-width: 767px){
