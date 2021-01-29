@@ -16,7 +16,7 @@ const onPostChange = () => {
 
     return(
         <div className={s.newpost}>
-            <label for='message' className={s.label}>
+            <label htmlFor='message' className={s.label}>
                 Create your new post
             </label>
             <div className={s.textarea}>

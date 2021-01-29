@@ -1,19 +1,23 @@
 import Dialogs from './Dialogs';
 import {addMes,updateNewMesText} from '../../redux/dialogs-reducer';
 import { connect } from 'react-redux';
+import { withAuthRedirect } from '../../hoc/withAuthRedirect';
+import { compose } from 'redux';
+
+
 
 
 const mapStateToProps = (state) => {
     return{
         dialogsPage: state.dialogsPage,
-        isAuth: state.auth.isAuth,
+        isAuth: state.auth,
     }
 }
 
 
-const DialogsContainer = connect(mapStateToProps, {
+export default compose(connect(mapStateToProps, {
     updateNewMesText,
     addMes,
-})(Dialogs);
-
-export default DialogsContainer;
+}),
+withAuthRedirect
+)(Dialogs);

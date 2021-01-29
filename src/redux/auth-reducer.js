@@ -29,10 +29,10 @@ const authReducer = (state = inintialState, action) => {
     }
 }
 
-export const changeStateBurg = (thisState) => {
+export const changeStateBurg = (newState) => {
     return {
         type: CHANGE_STATE_BURG,
-        newState: thisState,
+        newState,
     }
 };
 

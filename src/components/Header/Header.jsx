@@ -15,7 +15,7 @@ const Header = (props) => {
     return(
         <header className={s.header} >
           <NavLink to='/' className={s.logo}>
-            Look For Job
+            LFJ
           </NavLink>
           <div className={s.info} >
             <div className={s.loginWrap}>
