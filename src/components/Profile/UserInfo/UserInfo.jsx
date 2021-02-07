@@ -9,9 +9,9 @@ const UserInfo = (props) => {
     }
     return(
         <div className={s.info}>
-            <div className={s.bg}>
+            {/* <div className={s.bg}>
               <img src="https://buki.com.ua/data/files/news/15542215853893.jpg"/>
-            </div>
+            </div> */}
             <div className={s.user}>
                 <div className={s.photo}>
                     <img src={props.profile.photos.large != null ? props.profile.photos.large : userPhoto}/>
@@ -23,7 +23,7 @@ const UserInfo = (props) => {
                         
                         
                     </div> 
-                    <ProfileStatus status={'hello'} />
+                    <ProfileStatus status={props.status} updateStatus={props.updateStatus} />
                     <div className={s.about}>
                         {props.profile.aboutMe}
                     </div>

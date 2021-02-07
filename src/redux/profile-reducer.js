@@ -1,8 +1,9 @@
-import { userAPI } from "../api/api";
+import { profileAPI, userAPI } from "../api/api";
 
 const ADD_POST = 'ADD-POST';
 const UPDATE_NEW_POST_TEXT = 'UPDATE-NEW-POST-TEXT';
 const SET_USER_PROFILE = 'SET-USER-PROFILE';
+const SET_STATUS = 'SET-STATUS';
 
 let inintialState = {
     newPostText: '',
@@ -13,6 +14,7 @@ let inintialState = {
      {id: 4, message:'Lorem ipsum dolor sit amet consectetur adipisicing elit. Labore cum reprehenderit fuga at corporis a modi adipisci doloribus ullam accusamus laboriosam quasi et laborum dolore, quisquam saepe consequatur sed odio!', likeCount: 1 },
    ], 
    profile: null,
+   status: '',
  };
 const profileReducer = (state = inintialState, action) => {
     
@@ -36,6 +38,11 @@ const profileReducer = (state = inintialState, action) => {
             return {
                 ...state,
                 profile: action.profile,
+            }
+        case SET_STATUS:
+            return {
+                ...state,
+               status: action.status,
             }
         default: 
             return state;
@@ -61,7 +68,26 @@ export const getUserProfile = (userId) => (dispatch) => {
 });
 };
 
+export const setStatus = (status) => {
+    return {
+        type: SET_STATUS,
+        status,
+    }
+};
 
+export const getStatus = (userId) => (dispatch) => {
+    profileAPI.getStatus(userId).then(response => {
+        dispatch(setStatus(response.data));
+});
+};
+
+export const updateStatus = (status) => (dispatch) => {
+    profileAPI.updateStatus(status).then(response => {
+        if(response.data.resultCode === 0){
+            dispatch(setStatus(status));
+        }
+});
+};
 
 
 

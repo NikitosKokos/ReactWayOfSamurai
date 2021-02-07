@@ -1,9 +1,15 @@
-import React from 'react'
+import React from 'react';
+import s from './Login.module.css';
+import LoginForm from './LoginForm/LoginForm';
 
-const Login = () => {
+const Login = (props) => {
+    const onSubmit = (formData) => {
+        console.log(formData);
+    }
     return (
-        <div>
-            login
+        <div className={s.login}>
+            <h1>login</h1>
+            <LoginForm onSubmit={onSubmit} />
         </div>
     )
 }

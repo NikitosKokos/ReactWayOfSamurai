@@ -4,7 +4,7 @@ const intance = axios.create({
     withCredentials: true,
     baseURL: 'https://social-network.samuraijs.com/api/1.0/',
     headers: {
-        'API-KEY': 'cab77a4f-56ff-4ac1-961e-6454b63eced2'},
+        'API-KEY': '90c5fdc2-5b27-4cac-abce-fb9643091c2b'},
 })
 
 export const userAPI = {
@@ -21,7 +21,20 @@ export const userAPI = {
         return intance.get('auth/me').then(response => response.data);
     },
     getProfile: (userId) => {
+        return profileAPI.getProfile(userId);
+    }
+
+}
+
+export const profileAPI = {
+    getProfile: (userId) => {
         return intance.get(`profile/${userId}`)
+    },
+    getStatus: (userId) => {
+        return intance.get(`profile/status/${userId}`)
+    },
+    updateStatus: (status) => {
+        return intance.put('profile/status', {status: status})
     }
 
 }

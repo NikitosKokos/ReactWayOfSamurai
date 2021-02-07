@@ -4,6 +4,13 @@
     color: #333;
     line-height: 1.3;
 }
+.edit{
+    width: 15px;
+    height: 15px;
+    display: inline-block;
+    cursor: pointer;
+    margin: 0px 0px 0px 10px;
+}
 
 .input input{
     border: none;
@@ -14,4 +21,14 @@
     letter-spacing: .5px;
     color: #333;
     line-height: 1.3;
+}
+.edit img{
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+.about{
+    display: flex;
+    align-items: center;
 }
