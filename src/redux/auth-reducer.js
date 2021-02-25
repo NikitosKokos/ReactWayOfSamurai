@@ -1,3 +1,4 @@
+import { stopSubmit } from "redux-form";
 import { userAPI } from "../api/api";
 
 const CHANGE_STATE_BURG = 'CHANGE-STATE-BURG';
@@ -55,6 +56,9 @@ export const login = (emain,password,rememberMe) => (dispatch) => {
     userAPI.login(emain,password,rememberMe).then(response => {
         if(response.resultCode === 0){
             dispatch(authUser());
+        } else{
+            let message = response.messages.length > 0 ? response.messages[0] : 'Common error';
+            dispatch(stopSubmit("login", {_error: message}));
         }
     });
 }

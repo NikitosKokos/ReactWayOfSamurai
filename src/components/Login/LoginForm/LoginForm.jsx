@@ -25,6 +25,9 @@ let LoginForm = (props) => {
                         placeholder='Password'
                     />
                 </div>
+                {props.error && <div className={s.submitError}>
+                    {props.error}
+                </div>}
                 <div className={s.checkbox}>
                     <Field 
                         type="checkbox" 
