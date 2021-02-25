@@ -1,6 +1,6 @@
 import s from './ProfileStatus.module.css';
 import React from 'react';
-import Edit from '../../../../assets/img/edit.svg'
+import Edit from '../../../../assets/img/edit.svg';
 
 class ProfileStatus extends React.Component {
     state = {

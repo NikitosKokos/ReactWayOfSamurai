@@ -20,6 +20,12 @@ export const userAPI = {
     auth: () => {
         return intance.get('auth/me').then(response => response.data);
     },
+    login: (email,password,rememberMe = false) => {
+        return intance.post('auth/login', {email,password,rememberMe}).then(response => response.data);
+    },
+    logout: () => {
+        return intance.delete('auth/login').then(response => response.data);
+    },
     getProfile: (userId) => {
         return profileAPI.getProfile(userId);
     }

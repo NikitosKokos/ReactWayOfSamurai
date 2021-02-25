@@ -1,33 +1,33 @@
 import s from './AddPosts.module.css';
 import React from 'react';
-import {addPostActionCreator,updateNewPostTextActionCreator} from '../../../../redux/profile-reducer'
+import { Field, reduxForm } from 'redux-form';
+import { maxLength, required } from '../../../../utils/validators/validators';
+import {Textarea} from '../../../common/FormControls/FormControls';
 
+const maxLength10 = maxLength(10);
 
 const AddPosts = (props) => {
-    const postElement = React.createRef();
-    const onAddPost = () => {
-        props.addPost();
-    }
-
-const onPostChange = () => {
-    const text = postElement.current.value;
-    props.updateNewPostText(text);
-}
-
     return(
-        <div className={s.newpost}>
+        <form onSubmit={props.handleSubmit} className={s.newpost}>
             <label htmlFor='message' className={s.label}>
                 Create your new post
             </label>
             <div className={s.textarea}>
-                <textarea id='message' placeholder='Writing new post' onChange={onPostChange} ref={postElement} value={props.newPostText} />
+                <Field 
+                id='message'  
+                type= 'text'
+                name='profilePost'
+                placeholder='Writing new post' 
+                component={Textarea}
+                validate={[required, maxLength10]}
+                 />
             </div>
-            <button onClick={onAddPost} 
-            className={s.btn}>
+            <button
+            className='btn'>
               <span>Create post</span>  
             </button>
-        </div>
+        </form>
     );
 }
 
-export default AddPosts;
+export default reduxForm({form: 'profileAddPostForm'})(AddPosts);

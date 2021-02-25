@@ -1,8 +1,6 @@
 const ADD_MES = 'ADD-MES';
-const UPDATE_NEW_MES_TEXT = 'UPDATE-NEW-MES-TEXT';
 
 let inintialState = {
-    newMesText: '',
     messages: [
         {id: 1, text: 'Hi Den!1', avatar: 'https://buki.com.ua/data/files/news/15542215853893.jpg'},
         {id: 2, text: 'Hello, how do you do?', avatar: 'https://www.flaticon.com/svg/static/icons/svg/1503/1503835.svg'},
@@ -23,29 +21,18 @@ const dialogsReducer = (state = inintialState, action) => {
         case ADD_MES:
             return {
                 ...state,
-                newMesText: '',
                 messages: [ ...state.messages, {
                 id: 5, 
-                text: state.newMesText, 
+                text: action.newMesText, 
                 avatar: 'https://buki.com.ua/data/files/news/15542215853893.jpg'
             }]
-            }
-        case UPDATE_NEW_MES_TEXT:
-            return {
-                ...state,
-                newMesText: action.newText,
             }
         default: 
             return state;
 }
 }
 
-export const addMes = () => ({ type: ADD_MES });
-export const updateNewMesText = (text) => {
-    return {
-        type: UPDATE_NEW_MES_TEXT,
-        newText: text,
-    }
-};
+export const addMes = (newMesText) => ({ type: ADD_MES, newMesText });
+
 
 export default dialogsReducer;

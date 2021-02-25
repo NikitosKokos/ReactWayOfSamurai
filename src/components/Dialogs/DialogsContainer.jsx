@@ -1,5 +1,5 @@
 import Dialogs from './Dialogs';
-import {addMes,updateNewMesText} from '../../redux/dialogs-reducer';
+import {addMes} from '../../redux/dialogs-reducer';
 import { connect } from 'react-redux';
 import { withAuthRedirect } from '../../hoc/withAuthRedirect';
 import { compose } from 'redux';
@@ -16,7 +16,6 @@ const mapStateToProps = (state) => {
 
 
 export default compose(connect(mapStateToProps, {
-    updateNewMesText,
     addMes,
 }),
 withAuthRedirect

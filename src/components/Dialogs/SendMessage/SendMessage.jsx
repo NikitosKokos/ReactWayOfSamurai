@@ -1,24 +1,27 @@
 import s from './SendMessage.module.css';
 import React from 'react';
+import { Field, reduxForm } from 'redux-form';
+import { required, maxLength} from '../../../utils/validators/validators';
+import { Textarea } from '../../common/FormControls/FormControls';
+
+const maxLength300 = maxLength(300);
 
 const SendMessage = (props) => {
-    const mesElement = React.createRef();
-    const onAddMessage = () => {
-        props.addMes();
-    }
-    const onMesChange = () => {
-        const text = mesElement.current.value;
-        props.updateNewMesText(text);
-    }
-    
     return(
-            <div className={s.sendBlock}>
+            <form onSubmit={props.handleSubmit} className={s.sendBlock}>
                 <div className={s.textarea}>
-                    <textarea onChange={onMesChange} placeholder='Enter your message' ref={mesElement} value={props.newMesText} ></textarea>
+                    <Field 
+                        placeholder='Enter your message' 
+                        type= 'text'
+                        component={Textarea} 
+                        name='message'
+                        validate={[required, maxLength300]}
+                    />
                 </div>
-                <button onClick={onAddMessage} className={s.btn}><span>Send</span></button>
-            </div>
+                <button className={s.btn}><span>Send</span></button>
+            </form>
     );
 }
 
-export default SendMessage;
+
+export default reduxForm({form: 'dialogAddMessageForm'})(SendMessage);

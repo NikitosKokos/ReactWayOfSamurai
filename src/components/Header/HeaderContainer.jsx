@@ -1,9 +1,8 @@
-import {authUser, setAuthUserData} from '../../redux/auth-reducer';
 import { connect } from 'react-redux';
 import Header from './Header';
 import React from 'react';
 import {changeStateMenu} from '../../redux/sidebar-reducer';
-import {changeStateBurg} from '../../redux/auth-reducer';
+import {changeStateBurg, logout, authUser} from '../../redux/auth-reducer';
 
 
 class HeaderContainer extends React.Component {
@@ -32,4 +31,5 @@ class HeaderContainer extends React.Component {
     authUser,
     changeStateMenu,
     changeStateBurg,
+    logout
 })(HeaderContainer);

@@ -1,0 +1,34 @@
+.btn{
+    height: 40px;
+    box-shadow: none;
+    border-radius: 20px;
+    border: none;
+    padding: 0 30px;
+    font-weight: 500;
+    color: #fff;
+    background: #00adb5;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 22px;
+    cursor: pointer;
+}
+.btn span{
+    position: relative;
+}
+.btn span:before{
+    content: '';
+    position: absolute;
+    bottom: -1px;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background: currentColor;
+    border-radius: 20px;
+    transition: all .3s ease-in-out;
+}
+@media (min-width: 992px){
+    .btn:hover span::before{
+        width: 100%;
+ }
+}

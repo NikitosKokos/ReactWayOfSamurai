@@ -1,0 +1,47 @@
+.formControl{
+}
+.textarea{
+    position: relative;
+}
+.formControl.error{
+    border: 2px solid red;
+}
+.error{
+    display: block;
+    color: #00adb5;
+    font-size: 16px;
+    letter-spacing: 1px;
+}
+input[type="checkbox"]{
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 2; 
+    opacity: 0;
+}
+input[type="checkbox"] + .checkebox{
+    width: 20px;
+    height: 20px;
+    border: 2px solid #00adb5;
+    background: transparent;
+    transition: all .3s ease-in-out;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+input[type="checkbox"] + .checkebox:after{
+    content:'';
+    width: 12px;
+    height: 12px;
+    background: #00adb5;
+    display: inline-block;
+    transition: all .3s ease-in-out;
+    opacity: 0;
+}
+
+input[type="checkbox"]:checked + .checkebox::after{
+    opacity: 1;
+}
