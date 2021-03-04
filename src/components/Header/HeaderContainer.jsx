@@ -2,14 +2,10 @@ import { connect } from 'react-redux';
 import Header from './Header';
 import React from 'react';
 import {changeStateMenu} from '../../redux/sidebar-reducer';
-import {changeStateBurg, logout, authUser} from '../../redux/auth-reducer';
+import {changeStateBurg, logout} from '../../redux/auth-reducer';
 
 
 class HeaderContainer extends React.Component {
-
-  componentDidMount() {
-    this.props.authUser();
-  }
 
 
   render(){
@@ -28,7 +24,6 @@ class HeaderContainer extends React.Component {
 
   
   export default connect(mapStateToProps, {
-    authUser,
     changeStateMenu,
     changeStateBurg,
     logout

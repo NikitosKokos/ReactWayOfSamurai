@@ -4,7 +4,6 @@ import React from 'react';
 import { connect } from 'react-redux';
 import { Redirect, withRouter } from 'react-router-dom';
 import { compose } from 'redux';
-import { userAPI } from '../../api/api';
 import { withAuthRedirect } from '../../hoc/withAuthRedirect';
 import { getUserProfile,getStatus,updateStatus } from '../../redux/profile-reducer';
 import Profile from './Profile';
@@ -20,7 +19,11 @@ class ProfileContainer extends React.Component {
     }
 
     render(){
-        return <Profile {...this.props} profile={this.props.profile} status={this.props.status} updateStatus={this.props.updateStatus} />
+        return <Profile 
+                    {...this.props} 
+                    profile={this.props.profile} 
+                    status={this.props.status} 
+                    updateStatus={this.props.updateStatus} />
     }
 }
 
@@ -30,7 +33,7 @@ const mapStateToProps = (state) => (
         profile: state.profilePage.profile,
         status: state.profilePage.status,
         isAuth: state.auth.isAuth,
-        autorizedUserId: state.auth.userId
+        autorizedUserId: state.auth.id
     }
 )
 

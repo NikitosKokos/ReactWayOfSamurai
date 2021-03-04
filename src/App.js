@@ -7,12 +7,23 @@ import {
   Switch,
   Route
 } from "react-router-dom";
+import React from 'react'
 import DialogsContainer from './components/Dialogs/DialogsContainer';
 import UsersContainer from './components/Users/UsersContainer';
 import Login from './components/Login/Login';
+import { connect } from 'react-redux';
+import {initializeApp} from './redux/app-reducer';
+import Preloader from './components/common/Preloader/Preloader';
 
 
 const App = (props) => {
+  React.useEffect(() => {
+    props.initializeApp();
+  }, []);
+  console.log(props.initialized);
+  if(!props.initialized){
+    return <div className="center"><Preloader /></div>
+  }
   return (
     <Router>
       <div className="wrapper">
@@ -49,4 +60,10 @@ const App = (props) => {
   );
 }
 
-export default App;
+const mapStateToProps = (state) => ({
+  initialized: state.app.initialized
+})
+
+export default connect(mapStateToProps, {
+  initializeApp
+})(App);
