@@ -20,7 +20,6 @@ const App = (props) => {
   React.useEffect(() => {
     props.initializeApp();
   }, []);
-  console.log(props.initialized);
   if(!props.initialized){
     return <div className="center"><Preloader /></div>
   }
@@ -46,7 +45,7 @@ const App = (props) => {
           <Route path="/settings">
            
           </Route>
-          <Route path="/users">
+          <Route path="/users/:page?">
             <UsersContainer />
           </Route>
           <Route path="/login">

@@ -14,8 +14,8 @@ const Users = (props) => {
         <div className={s.users}>
             <div className={s.pagination}>
                 {pages.map(p => {
-                       return <div onClick={() => {props.onPageChanged(p)}} className={`${s.page} ${props.currentPage === p && s.selectedPage}`}>{p}</div>
-                    })}
+                       return <NavLink to={`/users/${p}`} onClick={() => {props.onPageChanged(p)}} className={`${s.page} ${props.currentPage === p && s.selectedPage}`} key={p} >{p}</NavLink>
+                })}
             </div>
             <div className={s.usersCont}>
             {props.users.map(u => <div key={u.id} className={s.user}>
