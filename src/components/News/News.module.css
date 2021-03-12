@@ -1,0 +1,58 @@
+.wrapper{
+    padding: 40px 10px;
+}
+
+.title{
+    font-size: 44px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    margin: 0px 0px 20px 0px;
+}
+
+.pagination{
+    display: flex;
+    padding: 10px 0px;
+    overflow-y: auto;
+}
+.preloader{
+    margin: 0px 0px 20px 0px;
+}
+.page{
+    border: 1px solid #00adb5;
+    padding: 0 10px;
+    height: 30px;
+    border-radius: 15px;
+    color: #222831;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0px 5px 0px 0px;
+    cursor: pointer;
+    transition: all .3s ease-in-out;
+}
+@media (min-width: 992px){
+    .page:hover{
+        background: #00adb5;
+        color: #fff;
+    }
+}
+
+.selectedPage{
+    background: #00adb5;
+    color: #fff;
+}
+
+@media (min-width: 701px){
+    .items{
+        display: flex;
+        justify-content: space-between;
+        flex-wrap: wrap;
+    }    
+}
+
+@media (max-width: 480px){
+    .wrapper{
+        padding: 20px 10px;
+    }
+}
+

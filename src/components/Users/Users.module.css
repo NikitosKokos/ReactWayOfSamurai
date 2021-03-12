@@ -98,6 +98,12 @@
     cursor: pointer;
     transition: all .3s ease-in-out;
 }
+@media (min-width: 992px){
+    .page:hover{
+        background: #00adb5;
+        color: #fff;
+    }
+}
 .page:last-child{
     margin: 0px 0px 0px 0px;
 }

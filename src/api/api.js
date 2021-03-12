@@ -7,6 +7,10 @@ const intance = axios.create({
         'API-KEY': '90c5fdc2-5b27-4cac-abce-fb9643091c2b'},
 })
 
+const news = axios.create({
+    baseURL: 'http://newsapi.org/v2/',
+})
+
 export const userAPI = {
     getUsers: (currentPage,pageSize) => {
     return intance.get(`users?page=${currentPage}&count=${pageSize}`).then(response => response.data);
@@ -43,4 +47,11 @@ export const profileAPI = {
         return intance.put('profile/status', {status: status})
     }
 
+}
+
+
+export const newsAPI = {
+    getNews: (country,page,pageSize) => {
+        return news.get(`top-headlines?country=${country}&page=${page}&pageSize=${pageSize}&apiKey=70b45b6b25ec42cfb8bf8d6e7c6dc87d`).then(response => response.data)
+    }
 }

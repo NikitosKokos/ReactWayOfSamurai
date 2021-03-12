@@ -14,6 +14,7 @@ import Login from './components/Login/Login';
 import { connect } from 'react-redux';
 import {initializeApp} from './redux/app-reducer';
 import Preloader from './components/common/Preloader/Preloader';
+import NewsContainer from './components/News/NewsContainer';
 
 
 const App = (props) => {
@@ -36,8 +37,8 @@ const App = (props) => {
           <Route path="/messages">
           <DialogsContainer />
           </Route>
-          <Route path="/news">
-           
+          <Route path="/news/:page?">
+           <NewsContainer />
           </Route>
           <Route path="/music">
            

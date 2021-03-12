@@ -10,14 +10,13 @@ import { withRouter } from 'react-router-dom';
 
 
 class UsersContainer extends React.Component {
-
+    
     componentDidMount() {
         let page = this.props.match.params.page;
-        if(!page){
+        if(page === undefined){
             page = this.props.currentPage;
         }
-        this.props.requestUsers(page,this.props.pageSize);
-        debugger;
+        this.props.requestUsers(Number(page),this.props.pageSize);
     }
     
     onPageChanged = (p) => {
