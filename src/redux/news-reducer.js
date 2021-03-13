@@ -4,6 +4,7 @@ const SET_NEWS = 'SET_NEWS';
 const SET_TOTAL_RESULT = 'SET_TOTAL_RESULT';
 const TOGGLE_IS_FETCING = 'TOGGLE_IS_FETCING';
 const SET_CURRENT_PAGE = 'SET_CURRENT_PAGE';
+const SET_COUNTRY = 'SET_COUNTRY';
 
 
 let inintialState = {
@@ -13,6 +14,11 @@ let inintialState = {
     page: 1,
     isFetching: false,
     country: 'us',
+    countries: [
+        ['us', 'USA'],
+        ['ua', 'Ukraine'],
+        ['ru', 'Russia'],
+    ],
  };
 const newsReducer = (state = inintialState, action) => {
     
@@ -36,6 +42,11 @@ const newsReducer = (state = inintialState, action) => {
             return {
                 ...state,
                 page: action.payload,
+            }
+        case SET_COUNTRY:
+            return {
+                ...state,
+                country: action.payload,
             }
         default: 
             return state;
@@ -71,18 +82,32 @@ export const setCurrentPage = (page) => {
     }
 };
 
+export const setCountry = (country) => {
+    return {
+        type: SET_COUNTRY,
+        payload: country
+    }
+}
 
-export const requestNews = (country,page,apiKey) => {
+
+export const requestNews = (country,page,pageSize) => {
     return (dispatch) => {
     dispatch(toggleIsFetching(true));
     dispatch(setCurrentPage(page));
-    newsAPI.getNews(country,page,apiKey).then(({status, totalResults, articles}) => {
+    newsAPI.getNews(country,page,pageSize).then(({status, totalResults, articles}) => {
         if(status === 'ok'){
             dispatch(toggleIsFetching(false));
             dispatch(setTotalResults(totalResults));
             dispatch(setNews(articles));    
         }
     });
+    }  
+}
+
+export const requestCountry = (country,page,pageSize) => {
+    return (dispatch) => {
+    dispatch(requestNews(country,page,pageSize));
+    dispatch(setCountry(country));
     }  
 }
 

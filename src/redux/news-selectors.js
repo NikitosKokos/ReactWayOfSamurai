@@ -21,3 +21,7 @@ export const getIsFetching = (state) => {
 export const getCountry = (state) => {
     return state.newsPage.country;
 }
+
+export const getCountries = (state) => {
+    return state.newsPage.countries;
+}

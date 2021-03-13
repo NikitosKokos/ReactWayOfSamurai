@@ -1,9 +1,9 @@
 import React from 'react';
-import { requestNews, setCurrentPage } from '../../redux/news-reducer';
+import { requestNews, setCurrentPage,requestCountry } from '../../redux/news-reducer';
 import News from './News';
 import { compose } from 'redux';
 import { connect } from 'react-redux';
-import { getIsFetching,getPage,getTotalResults,getPageSize,getNews,getCountry, } from '../../redux/news-selectors';
+import { getIsFetching,getPage,getTotalResults,getPageSize,getNews,getCountry,getCountries, } from '../../redux/news-selectors';
 import { withRouter } from 'react-router-dom';
 
 class NewsContainer extends React.Component {
@@ -18,6 +18,9 @@ class NewsContainer extends React.Component {
     onPageChanged = (p) => {
         this.props.requestNews(this.props.country,p,this.props.pageSize);
     }
+    onCountryChanged = (c) => {
+        this.props.requestCountry(c,this.props.page,this.props.pageSize);
+    }
 
     render = () => (
         <>
@@ -28,7 +31,9 @@ class NewsContainer extends React.Component {
                 page={this.props.page}
                 country={this.props.country}
                 isFetching={this.props.isFetching}
+                countries={this.props.countries}
                 onPageChanged={this.onPageChanged}
+                onCountryChanged={this.onCountryChanged}
             />
         </>
     )
@@ -41,14 +46,16 @@ const mapStateToProps = (state) => {
         totalResults: getTotalResults(state),
         page: getPage(state),
         isFetching: getIsFetching(state),
-        country: getCountry(state)
+        country: getCountry(state),
+        countries:  getCountries(state),
     }
 }
 
 
 export default compose(connect(mapStateToProps,{
         setCurrentPage,
-        requestNews
+        requestNews,
+        requestCountry
     }),
     withRouter,
     )(NewsContainer);

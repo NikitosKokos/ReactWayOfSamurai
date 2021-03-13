@@ -9,6 +9,11 @@
     margin: 0px 0px 20px 0px;
 }
 
+.notNews{
+    color: #00adb5;
+    font-size: 16px;
+}
+
 .pagination{
     display: flex;
     padding: 10px 0px;
