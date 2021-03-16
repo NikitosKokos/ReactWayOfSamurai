@@ -17,6 +17,7 @@ class HeaderContainer extends React.Component {
       return{
         isAuth: state.auth.isAuth,
         login:  state.auth.login,
+        burgerActive: state.sidebar.active,
       }
   }
   

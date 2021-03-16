@@ -1,63 +1,62 @@
-.wrapper{
-    padding: 40px 10px;
+.wrapper {
+  padding: 40px 10px;
 }
 
-.title{
-    font-size: 44px;
-    font-weight: 700;
-    letter-spacing: 2px;
-    margin: 0px 0px 20px 0px;
+.title {
+  font-size: 44px;
+  font-weight: 700;
+  letter-spacing: 2px;
+  margin: 0px 0px 20px 0px;
 }
 
-.notNews{
-    color: #00adb5;
-    font-size: 16px;
+.notNews {
+  color: #00adb5;
+  font-size: 16px;
 }
 
-.pagination{
-    display: flex;
-    padding: 10px 0px;
-    overflow-y: auto;
+.pagination {
+  display: flex;
+  padding: 10px 0px;
+  overflow-y: auto;
 }
-.preloader{
-    margin: 0px 0px 20px 0px;
+.preloader {
+  margin: 0px 0px 20px 0px;
 }
-.page{
-    border: 1px solid #00adb5;
-    padding: 0 10px;
-    height: 30px;
-    border-radius: 15px;
-    color: #222831;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin: 0px 5px 0px 0px;
-    cursor: pointer;
-    transition: all .3s ease-in-out;
+.page {
+  border: 1px solid #00adb5;
+  padding: 0 10px;
+  height: 30px;
+  border-radius: 15px;
+  color: #222831;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0px 5px 0px 0px;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
 }
-@media (min-width: 992px){
-    .page:hover{
-        background: #00adb5;
-        color: #fff;
-    }
-}
-
-.selectedPage{
+@media (min-width: 992px) {
+  .page:hover {
     background: #00adb5;
     color: #fff;
+  }
 }
 
-@media (min-width: 701px){
-    .items{
-        display: flex;
-        justify-content: space-between;
-        flex-wrap: wrap;
-    }    
+.selectedPage {
+  background: #00adb5;
+  color: #fff;
 }
 
-@media (max-width: 480px){
-    .wrapper{
-        padding: 20px 10px;
-    }
+@media (min-width: 701px) {
+  .items {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+  }
 }
 
+@media (max-width: 480px) {
+  .wrapper {
+    padding: 20px 10px;
+  }
+}

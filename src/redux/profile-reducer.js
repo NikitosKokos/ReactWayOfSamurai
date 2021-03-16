@@ -1,4 +1,5 @@
 import { profileAPI, userAPI } from "../api/api";
+import {reset} from 'redux-form';
 
 const ADD_POST = 'ADD-POST';
 const SET_USER_PROFILE = 'SET-USER-PROFILE';

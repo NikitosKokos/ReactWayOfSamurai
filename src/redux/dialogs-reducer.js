@@ -1,3 +1,5 @@
+import {reset} from 'redux-form';
+
 const ADD_MES = 'ADD-MES';
 
 let inintialState = {

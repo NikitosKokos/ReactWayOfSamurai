@@ -2,7 +2,7 @@ import s from './Sidebar.module.css';
 import {
   NavLink
 } from "react-router-dom";
-import Friends from './Friends/Friends';
+import FriendsContainer from './Friends/FriendsContainer';
 const Sidebar = (props) => {
     let asideClasses = s.aside;
     if (props.active) {
@@ -23,7 +23,7 @@ const Sidebar = (props) => {
             <li><NavLink to="/music" onClick={closeMenu} className={s.link}  activeClassName={s.active}><span>Music</span></NavLink></li>
             <li><NavLink to="/settings" onClick={closeMenu} className={`${s.link} ${s.linkSet}`}  activeClassName={s.active}><span>Settings</span></NavLink></li>
           </ul>
-          <Friends friends={props.friends} />
+          <FriendsContainer />
       </aside>
     );
 }

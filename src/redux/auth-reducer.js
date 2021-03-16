@@ -1,6 +1,5 @@
 import { stopSubmit } from "redux-form";
 import { userAPI } from "../api/api";
-// import {reset} from 'redux-form';
 
 const CHANGE_STATE_BURG = 'CHANGE-STATE-BURG';
 const SET_USER_DATA = 'SET-USER-DATA';
@@ -60,7 +59,6 @@ export const login = (emain,password,rememberMe) => (dispatch) => {
         } else{
             let message = response.messages.length > 0 ? response.messages[0] : 'Common error';
             dispatch(stopSubmit("login", {_error: message}));
-            // dispatch(reset('login'));
         }
     });
 }

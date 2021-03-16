@@ -7,10 +7,10 @@
 		width: 16px;
 	}
 ::-webkit-scrollbar-thumb{
-    background: #222831;
+    background: #393e46;
 	}
 ::-webkit-scrollbar-track{
-		background: #393e46;
+		background: #222831;
 	}
 .wrapper{
   display: grid;

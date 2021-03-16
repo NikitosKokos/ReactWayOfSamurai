@@ -6,6 +6,10 @@ const ProfileStatus = (props) => {
     const [editMode, setEditMode] = React.useState(false);
     const [status, setStatus] = React.useState(props.status);
 
+    React.useEffect(() => {
+        setStatus(props.status);
+    },[props.status]);
+
     const activateEditMode = () => {
         setEditMode(true)
     }
@@ -13,19 +17,7 @@ const ProfileStatus = (props) => {
         setEditMode(false)
         props.updateStatus(status);
     }
-    // onStatusChange = (e) => {
-    //     setState({
-    //         status: e.currentTarget.value
-    //     })
-    // }
 
-    // componentDidUpdate(prevProps, prevState) {
-    //     if(prevProps.status !== props.status) {
-    //         setState({
-    //             status: props.status
-    //         })
-    //     }
-    // }
 
         return (
             <div className={s.status}>

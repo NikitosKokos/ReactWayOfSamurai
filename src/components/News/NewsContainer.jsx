@@ -5,7 +5,6 @@ import { compose } from 'redux';
 import { connect } from 'react-redux';
 import { getIsFetching,getPage,getTotalResults,getPageSize,getNews,getCountry,getCountries, } from '../../redux/news-selectors';
 import { withRouter } from 'react-router-dom';
-
 class NewsContainer extends React.Component {
     componentDidMount() {
         let page = this.props.match.params.page;
