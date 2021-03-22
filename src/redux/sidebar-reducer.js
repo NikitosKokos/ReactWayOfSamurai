@@ -89,10 +89,14 @@ export const requestFriends = (page,pageSize,friends,friendsCount) => {
         dispatch(setTotalUsersCount(data.totalCount));
         data.items.forEach(u => {
             if(u.followed && friends.length < friendsCount){
-                dispatch(setFriends(friends));
+                dispatch(setFriends(u));
             }
         });
+        if(friends.length < friendsCount && pageSize >= page){
+            dispatch(requestFriends(page,pageSize,friends,friendsCount));
+        }
     });
+    
     }  
 }
 

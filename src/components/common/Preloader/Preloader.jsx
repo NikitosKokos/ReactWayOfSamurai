@@ -3,7 +3,7 @@ import s from './Preloader.module.css';
 
 const Preloader = (props) => {
     return (
-        <div class={s.preloader}>
+        <div className={s.preloader}>
             <div></div><div></div><div></div><div></div>
         </div>
     )

@@ -9,11 +9,11 @@ class UsersContainer extends React.Component {
     
     componentDidMount() {
         this.props.requestFriends(this.props.currentPage,this.props.pageSize,this.props.friends,this.props.friendsCount);
-        let pagesCount = Math.ceil(this.props.totalUsersCount / this.props.pageSize);
-        for(let i = 2; i <= pagesCount; i++){
-            this.props.requestFriends(this.props.currentPage,this.props.pageSize,this.props.friends,this.props.friendsCount);
-        }
-        console.log(this.props.friends);
+        // let pagesCount = Math.ceil(this.props.totalUsersCount / this.props.pageSize);
+        // for(let i = 2; i <= pagesCount; i++){
+        //     this.props.requestFriends(this.props.currentPage,this.props.pageSize,this.props.friends,this.props.friendsCount);
+        // }
+        // console.log(this.props.friends);
     }
 
     render= () => {
@@ -22,6 +22,10 @@ class UsersContainer extends React.Component {
         pageSize={this.props.pageSize}
         currentPage={this.props.currentPage}
         users={this.props.users}
+        totalUsersCount={this.props.totalUsersCount}
+        friends={this.props.friends}
+        friendsCount={this.props.friendsCount}
+        requestFriends={this.props.requestFriends}
             />
         </>
     }
