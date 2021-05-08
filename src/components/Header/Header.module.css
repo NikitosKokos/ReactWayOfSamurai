@@ -95,4 +95,8 @@
 
  }
 
- 
+ @media (max-width: 480px){
+  .name{
+    display: none;
+  }
+}

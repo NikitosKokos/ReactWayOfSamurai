@@ -1,0 +1,33 @@
+.pagination{
+    display: flex;
+    padding: 10px 0px;
+    margin: 0px 0px 15px 0px;
+    overflow-y: auto;
+}
+.page{
+    border: 1px solid #00adb5;
+    padding: 0 10px;
+    height: 30px;
+    border-radius: 15px;
+    color: #222831;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0px 5px 0px 0px;
+    cursor: pointer;
+    transition: all .3s ease-in-out;
+}
+@media (min-width: 992px){
+    .page:hover{
+        background: #00adb5;
+        color: #fff;
+    }
+}
+.page:last-child{
+    margin: 0px 0px 0px 0px;
+}
+
+.selectedPage{
+    background: #00adb5;
+    color: #fff;
+}

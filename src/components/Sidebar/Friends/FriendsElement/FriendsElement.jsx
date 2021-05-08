@@ -1,11 +1,13 @@
 import s from './FriendsElement.module.css';
+import userPhoto from '../../../../assets/img/user.png';
+import { NavLink } from 'react-router-dom';
 
-const FriendsElement = (props) => {
+const FriendsElement = ({id, photo, name}) => {
     return(
-        <div className={s.item}>
-            <div className={s.img}><img src={props.avatar} alt="avatar"/></div>
-            <div className={s.name}>{props.name}</div>
-        </div>
+        <NavLink to={`/profile/${id}`} className={s.item}>
+            <div className={s.img}> <img src={photo != null ? photo : userPhoto} alt="avatar"/></div>
+            <div className={s.name}>{name}</div>
+        </NavLink>
     );
 }
 

@@ -2,29 +2,46 @@
     padding: 40px 10px;
     font-size: 18px;
 }
+
+.title {
+    font-size: 44px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    margin: 0px 0px 20px 0px;
+}
+
 .user{
-    display: flex;
+    padding: 20px;
+    border: 1px solid #393e46;
+    border-radius: 10px;
+    box-shadow: -10px 10px 20px rgba(230, 230, 230, 0.2), 10px -10px 20px rgba(230, 230, 230, 0.2), -10px -10px 20px rgba(255, 255, 255, 0.9), 10px 10px 25px rgba(230, 230, 230, 0.9);
     margin: 0px 0px 40px 0px;
 }
-.usersCont{
+.user:last-child{
+    margin: 0px 0px 0px 0px;
+  }
 
-}
 .body{
-    flex: 1 1 auto;
-    padding: 0px 0px 0px 40px;
+    padding: 0px 20px;
     display: flex;
-    justify-content: space-between;
     align-items: center;
 }
 .main{
-    flex: 0 0 auto;
+    flex: 1 1 auto;
+    display: flex;
+    align-items: center;
+    overflow: hidden;
+}
+.text{
+    flex: 1 1 auto;
+    overflow: hidden;
+    padding: 0 20px;
 }
 .avatar{
-    width: 80px;
+    flex: 0 0 80px;
     height: 80px;
     border-radius: 50%;
     overflow: hidden;
-    margin: 0px 0px 10px 0px;
 }
 .avatar img{
     width: 100%;
@@ -34,19 +51,22 @@
 .name{
     font-size: 30px;
     color: #222831;
+    overflow: hidden;
+    text-overflow: ellipsis;
 }
 .status{
     font-size: 24px;
     color: #393e46;
+    overflow: hidden;
+    text-overflow: ellipsis;
 }
 
 .btn{
     height: 40px;
-    width: 120px;
+    flex: 0 0 120px;
     box-shadow: none;
     border-radius: 20px;
     border: none;
-    padding: 0 30px;
     font-weight: 500;
     color: #fff;
     background: #00adb5;
@@ -79,37 +99,53 @@
     background: #008086;
 }
 
-.pagination{
-    display: flex;
-    padding: 10px 0px;
-    margin: 0px 0px 15px 0px;
-    overflow-y: auto;
-}
-.page{
-    border: 1px solid #00adb5;
-    padding: 0 10px;
-    height: 30px;
-    border-radius: 15px;
-    color: #222831;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin: 0px 5px 0px 0px;
-    cursor: pointer;
-    transition: all .3s ease-in-out;
-}
-@media (min-width: 992px){
-    .page:hover{
-        background: #00adb5;
-        color: #fff;
+
+
+@media (max-width: 767px){
+    .user{
+        padding: 10px;
+    }
+    .text{
+        padding: 0 10px;
+    }
+    .body{
+        padding: 0;
+    }
+    .name{
+        font-size: 26px;
+    }
+    .status{
+        font-size: 20px;
+    }
+    .avatar{
+        flex: 0 0 70px;
+        height: 70px;
     }
 }
-.page:last-child{
-    margin: 0px 0px 0px 0px;
+
+@media (max-width: 600px){
+    .name{
+        font-size: 24px;
+    }
+    .status{
+        font-size: 18px;
+    }
 }
 
-.selectedPage{
-    background: #00adb5;
-    color: #fff;
+@media (max-width: 480px){
+    .body{
+        flex-wrap: wrap;
+    }
+    .main{
+        margin: 0px 0px 10px 0px;
+    }
+    .name{
+        font-size: 20px;
+    }
+    .status{
+        font-size: 16px;
+    }
+    .btn{
+        flex: 0 0 100%;
+    }
 }
-

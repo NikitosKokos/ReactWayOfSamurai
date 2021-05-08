@@ -4,10 +4,9 @@ import ProfileContainer from './components/Profile/ProfileContainer';
 import SidebarContainer from './components/Sidebar/SidebarContainer';
 import {
   BrowserRouter as Router,
-  Switch,
   Route
 } from "react-router-dom";
-import React from 'react'
+import React from 'react';
 import DialogsContainer from './components/Dialogs/DialogsContainer';
 import UsersContainer from './components/Users/UsersContainer';
 import Login from './components/Login/Login';
@@ -30,7 +29,6 @@ const App = (props) => {
       <HeaderContainer/>
         <SidebarContainer/>
         <main className="main">
-        <Switch>
           <Route path="/profile/:userId?">
              <ProfileContainer />
           </Route>
@@ -52,7 +50,6 @@ const App = (props) => {
           <Route path="/login">
             <Login />
           </Route>
-        </Switch>
         </main>
         
       </div>

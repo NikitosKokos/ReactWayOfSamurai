@@ -91,16 +91,15 @@ export const setCountry = (country) => {
 
 
 export const requestNews = (country,page,pageSize) => {
-    return (dispatch) => {
+    return async (dispatch) => {
     dispatch(toggleIsFetching(true));
     dispatch(setCurrentPage(page));
-    newsAPI.getNews(country,page,pageSize).then(({status, totalResults, articles}) => {
-        if(status === 'ok'){
-            dispatch(toggleIsFetching(false));
-            dispatch(setTotalResults(totalResults));
-            dispatch(setNews(articles));    
-        }
-    });
+    const {status, totalResults, articles} = await newsAPI.getNews(country,page,pageSize);
+    if(status === 'ok'){
+        dispatch(toggleIsFetching(false));
+        dispatch(setTotalResults(totalResults));
+        dispatch(setNews(articles));    
+    }
     }  
 }
 

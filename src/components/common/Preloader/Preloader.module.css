@@ -34,3 +34,7 @@
       transform: rotate(360deg);
     }
   }
+
+.preloader.white div {
+  border-color: white transparent transparent transparent;
+}

@@ -9,6 +9,7 @@ const mapStateToProps = (state) => {
   return{
       active: state.sidebar.active,
       friends: state.sidebar.friends,
+      isAuth: state.auth.isAuth,
   }
 }
 

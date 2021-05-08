@@ -4,6 +4,7 @@ import {reset} from 'redux-form';
 const ADD_POST = 'ADD-POST';
 const SET_USER_PROFILE = 'SET-USER-PROFILE';
 const SET_STATUS = 'SET-STATUS';
+const DELETE_POST = 'DELETE_POST';
 
 let inintialState = {
     posts: [
@@ -27,6 +28,11 @@ const profileReducer = (state = inintialState, action) => {
                     likeCount: 0,
                 }]
             }
+        case DELETE_POST:
+            return {
+                ...state,
+                posts: state.posts.filter(p => p.id !== action.payload)
+            }
         case SET_USER_PROFILE:
             return {
                 ...state,
@@ -43,6 +49,7 @@ const profileReducer = (state = inintialState, action) => {
 }
 
 export const addPost = (newPostText) => ({ type: ADD_POST,newPostText });
+export const deletePost = (id) => ({ type: DELETE_POST,payload: id });
 export const setUserProfile = (profile) => {
     return {
         type: SET_USER_PROFILE,
@@ -62,18 +69,16 @@ export const setStatus = (status) => {
     }
 };
 
-export const getStatus = (userId) => (dispatch) => {
-    profileAPI.getStatus(userId).then(response => {
-        dispatch(setStatus(response.data));
-});
+export const getStatus = (userId) => async (dispatch) => {
+    const response = await profileAPI.getStatus(userId);
+    dispatch(setStatus(response.data));
 };
 
-export const updateStatus = (status) => (dispatch) => {
-    profileAPI.updateStatus(status).then(response => {
-        if(response.data.resultCode === 0){
-            dispatch(setStatus(status));
-        }
-});
+export const updateStatus = (status) => async (dispatch) => {
+    const response = await profileAPI.updateStatus(status);
+    if(response.data.resultCode === 0){
+        dispatch(setStatus(status));
+    }
 };
 
 

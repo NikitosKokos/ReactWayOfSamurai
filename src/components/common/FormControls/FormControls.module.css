@@ -20,6 +20,7 @@ input[type="checkbox"]{
     left: 0;
     z-index: 2; 
     opacity: 0;
+    cursor: pointer;
 }
 input[type="checkbox"] + .checkebox{
     width: 20px;

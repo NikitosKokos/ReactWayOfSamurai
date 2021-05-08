@@ -1,12 +1,14 @@
 import React from 'react';
 import s from './LoginForm.module.css';
 import {Field, reduxForm} from 'redux-form';
-import { Input } from '../../common/FormControls/FormControls';
+import { createField, Input } from '../../common/FormControls/FormControls';
 import { required } from '../../../utils/validators/validators';
 
-let LoginForm = (props) => {
+let LoginForm = ({handleSubmit, error}) => {
     return (
-            <form className={s.form} onSubmit={props.handleSubmit}>
+            <form className={s.form} onSubmit={handleSubmit}>
+                {/* {createField('Email','email',[required],Input)}
+                {createField('Password','password',[required],Input,'password')} */}
                 <div className={s.input}>
                     <Field 
                         type="text" 
@@ -25,8 +27,8 @@ let LoginForm = (props) => {
                         placeholder='Password'
                     />
                 </div>
-                {props.error && <div className={s.submitError}>
-                    {props.error}
+                {error && <div className={s.submitError}>
+                    {error}
                 </div>}
                 <div className={s.checkbox}>
                     <Field 

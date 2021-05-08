@@ -1,13 +1,11 @@
 .friends{
-    padding: 10px 10px 30px 10px;
-    margin: 0 -10px;
+    padding: 10px 0px 20px 0px;
 }
 .title{
     font-size: 26px;
     letter-spacing: 1px;
     color: #222831;
     background: #fff;
-    margin: 0px 0px 10px 0px;
     display: flex;
     justify-content: center;
     position: relative;
@@ -17,4 +15,5 @@
 
 .body{
     display: flex;
+    flex-wrap: wrap;
 }

@@ -1,32 +1,26 @@
 import Preloader from '../../common/Preloader/Preloader';
 import s from './UserInfo.module.css';
-import userPhoto from '../../../assets/img/user.png'
+import userPhoto from '../../../assets/img/user.png';
 import ProfileStatus from './ProfileStatus/ProfileStatus';
 
-const UserInfo = (props) => {
-    if(!props.profile){
+const UserInfo = ({profile, updateStatus, status}) => {
+    if(!profile){
         return <Preloader />
     }
     return(
         <div className={s.info}>
-            {/* <div className={s.bg}>
-              <img src="https://buki.com.ua/data/files/news/15542215853893.jpg"/>
-            </div> */}
             <div className={s.user}>
                 <div className={s.photo}>
-                    <img src={props.profile.photos.large != null ? props.profile.photos.large : userPhoto}/>
+                    <img src={profile.photos.large != null ? profile.photos.large : userPhoto}/>
                 </div> 
                 <div className={s.text}>
                     <div className={s.name}>
-                    <div className={s.fullName}>{props.profile.fullName}</div>
-                        
-                        
-                        
+                    <div className={s.fullName}>{profile.fullName}</div>
                     </div> 
-                    <ProfileStatus status={props.status} updateStatus={props.updateStatus} />
-                    <div className={s.about}>
-                        {props.profile.aboutMe}
-                    </div>
+                    <ProfileStatus status={status} updateStatus={updateStatus} />
+                    {/* <div className={s.about}>
+                        {profile.aboutMe}
+                    </div> */}
                 </div>
                
           </div> 

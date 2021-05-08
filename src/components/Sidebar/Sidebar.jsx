@@ -23,7 +23,7 @@ const Sidebar = (props) => {
             <li><NavLink to="/music" onClick={closeMenu} className={s.link}  activeClassName={s.active}><span>Music</span></NavLink></li>
             <li><NavLink to="/settings" onClick={closeMenu} className={`${s.link} ${s.linkSet}`}  activeClassName={s.active}><span>Settings</span></NavLink></li>
           </ul>
-          <FriendsContainer />
+          {props.isAuth && <FriendsContainer />}
       </aside>
     );
 }
