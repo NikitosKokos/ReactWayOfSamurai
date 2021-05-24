@@ -16,6 +16,7 @@
     margin: 0px 5px 0px 0px;
     cursor: pointer;
     transition: all .3s ease-in-out;
+    background: #fff;
 }
 @media (min-width: 992px){
     .page:hover{

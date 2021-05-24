@@ -14,7 +14,7 @@ const Users = ({currentPage, pageSize, totalUsersCount, onPageChanged, users, is
                 currentPage={currentPage} 
                 pageSize={pageSize} 
                 onPageChanged={onPageChanged}
-                totalUsersCount={totalUsersCount} 
+                totalItemsCount={totalUsersCount} 
             />
             {isFetching 
             ? <Preloader/> 
@@ -22,7 +22,6 @@ const Users = ({currentPage, pageSize, totalUsersCount, onPageChanged, users, is
                 {users.map(user => <User key={user.id} user={user} followingIsProgress={props.followingIsProgress} follow={props.follow} unfollow={props.unfollow} />)}
             </div>
             }
-            
         </div>
     )
 }
