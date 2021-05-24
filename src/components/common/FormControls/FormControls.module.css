@@ -1,4 +1,5 @@
 .formControl{
+    position: relative;
 }
 .textarea{
     position: relative;

@@ -16,13 +16,13 @@
   display: grid;
   grid-template-areas:
   "header header"
-  "sidebar main";
-  grid-template-rows: 80px 1fr;
+  "sidebar main"
+  "footer footer";
+  grid-template-rows: 80px 1fr 60px;
   grid-template-columns: 250px 12fr;
   gap: 10px;
   max-width: 1300px;
   margin: 0 auto;
-  padding: 0px 10px 40px 10px;
   position: relative;
 }
 @media (max-width: 1400px){
@@ -47,7 +47,8 @@
     max-width: none;
     grid-template-areas:
   "header header"
-  "main main";
+  "main main"
+  "footer footer";
   }
 }
 
@@ -57,6 +58,13 @@
   background: #fff;
   box-shadow: 2px 2px 7px #222831;
   overflow: hidden;
+}
+
+.preloaderCont{
+  height: calc(100vh - 180px);
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .btn{
@@ -75,6 +83,11 @@
   cursor: pointer;
   border: none;
 }
+.btn_t{
+  background: transparent;
+  border: 2px solid #00adb5;
+  color: #00adb5;
+}
 .btn span{
   position: relative;
 }
@@ -92,13 +105,13 @@
 @media (min-width: 992px){
   .btn:hover span::before{
       width: 100%;
-}
+  }
 }
 
 .btnLight{
   background: #fff;
   color: #222831;
-  height: 50px;
+  height: 45px;
   border-radius: 25px;
   padding: 0 25px;
   display: flex;
@@ -136,4 +149,15 @@
   display: flex;
   justify-content: center;
   align-items: center;
+}
+
+.error-chat-form{
+  position: absolute;
+  top: 0;
+  transform: translateY(-100%);
+  left: 10px;
+  padding: 5px 10px;
+  background: #222831;
+  border-radius: 10px 10px 0px 0px;
+  z-index: 2;
 }

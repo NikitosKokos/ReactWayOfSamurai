@@ -2,7 +2,7 @@ import React from 'react';
 import { Field } from 'redux-form';
 import s from './FormControls.module.css';
 
-const FormControl = ({input, meta: { touched, error, warning }, children, ...props}) => {
+const FormControl = ({input, meta: { touched, error, warning }, children, errorClass, ...props}) => {
     const hasError =  touched && error;
     return (
         <div className={`${s.formControl} ${ hasError ? 'error': ''}`}>
@@ -11,7 +11,7 @@ const FormControl = ({input, meta: { touched, error, warning }, children, ...pro
                 <span className={s.checkebox}></span>
             </div>
             <div className={s.errors}>
-               { hasError && <p className={s.error}>{error}</p>} 
+               { hasError && <p className={`${s.error} ${errorClass ? errorClass : ''}`}>{error}</p>} 
             </div>
             
         </div>
@@ -29,7 +29,7 @@ export const Input = (props) => {
 }
 
 
-export const createField = (placeholder, name, validators, component,type, text) => (
+export const createField = (placeholder, name, validators, component, type, text) => (
 <div className={s.input}><Field 
     placeholder={placeholder} 
     name={name}

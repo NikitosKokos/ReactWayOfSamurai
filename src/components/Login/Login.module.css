@@ -7,10 +7,14 @@
 
 .wrapper{
     margin: 0 auto;
-    max-width: 400px;
+    width: 400px;
     padding: 0 10px;
 }
-
+@media (max-width: 480px){
+    .wrapper{
+        width: 100%;
+    }
+}
 .login{
     padding: 40px 0;
 }

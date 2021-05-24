@@ -1,37 +1,78 @@
+.post{
+    padding: 20px 10px;
+    border-radius: 10px;
+    background: #fff;
+    box-shadow: -10px 10px 20px rgba(230, 230, 230, 0.2), 10px -10px 20px rgba(230, 230, 230, 0.2), -10px -10px 20px rgba(255, 255, 255, 0.9), 10px 10px 25px rgba(230, 230, 230, 0.9);
+    margin: 0px 0px 20px 0px;
+    display: flex;
+}
+.post:last-child{
+    margin: 0px 0px 0px 0px;
+}
 .avatar{
     flex: 0 0 50px;
     width: 50px;
     height: 50px;
-    object-fit: cover;
-    max-width: 100%;
     border-radius: 50%;
     overflow: hidden;
 }
+.avatar img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+.main{
+    padding: 0px 0px 0px 10px;
+}
 .text{
     color: #222831;
-    padding: 0px 0px 0px 10px;
     font-size: 16px;
     line-height: 1.4;
-}
-.post{
-    display: flex;
-    margin: 0px 0px 10px 0px;
-}
-.post:last-child{
-    margin: 0px 0px 0px 0px;
 }
 .body{
     display: flex;
     flex: 1 1 auto;
     padding: 0px 10px 0px 0px;
 }
-.likes{
+.sidebar{
     flex: 0 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.likes{
     color: #222831;
     font-size: 16px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 10px 0px 0px 0px;
 }
-.likes span{
+.likesCount{
     font-weight: 700;
     font-size: 18px;
     color: #00adb5;
+}
+.like{
+    width: 30px;
+    height: auto;
+    margin: 0px 0px 5px 0px;
+    cursor: pointer;
+}
+.like svg path{
+    transition: all .3s ease-in-out;
+}
+.like.active svg path{
+    fill: #00adb5;
+}
+.image{
+    width: 100%;
+    margin: 0px 0px 5px 0px;
+    border-radius: 15px;
+    overflow: hidden;
+}
+.image img{
+    width: 100%;
+    height: auto;
+    object-fit: contain;
 }

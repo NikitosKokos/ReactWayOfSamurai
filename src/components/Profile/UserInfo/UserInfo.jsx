@@ -1,12 +1,9 @@
-import Preloader from '../../common/Preloader/Preloader';
 import s from './UserInfo.module.css';
 import userPhoto from '../../../assets/img/user.png';
 import ProfileStatus from './ProfileStatus/ProfileStatus';
 
 const UserInfo = ({profile, updateStatus, status}) => {
-    if(!profile){
-        return <Preloader />
-    }
+
     return(
         <div className={s.info}>
             <div className={s.user}>

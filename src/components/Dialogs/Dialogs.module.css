@@ -3,6 +3,11 @@
     height: calc(100vh - 140px);
     width: 100%;
 }
+@media (max-width: 600px){
+    .dialogs{
+        height: calc(100vh - 100px);
+    }
+}
 .dialogsItems{
     background: #222831;
     display: flex;
@@ -28,6 +33,9 @@
         display: flex;
         flex-direction: column;
         transform: translateX(15px);
+    }
+    .dialogsItems.hide{
+        flex: 0 0 0%;
     }
 }
 .messages{

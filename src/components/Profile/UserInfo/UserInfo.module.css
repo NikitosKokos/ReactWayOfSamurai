@@ -13,7 +13,6 @@
 }
 .photo{
   flex: 0 0 70px;
-  width: 70px;
   height: 70px;
   border-radius: 50%;
   overflow: hidden;
@@ -33,6 +32,9 @@
 .text{
     padding: 0px 0px 0px 20px;
     flex: 1 1 auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
 }
 
 .name{

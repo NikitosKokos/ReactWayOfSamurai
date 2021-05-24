@@ -14,6 +14,9 @@ import { connect } from 'react-redux';
 import {initializeApp} from './redux/app-reducer';
 import Preloader from './components/common/Preloader/Preloader';
 import NewsContainer from './components/News/NewsContainer';
+import {Provider} from 'react-redux';
+import store from './redux/redux-store';
+import Footer from './components/Footer/Footer';
 
 
 const App = (props) => {
@@ -32,7 +35,7 @@ const App = (props) => {
           <Route path="/profile/:userId?">
              <ProfileContainer />
           </Route>
-          <Route path="/messages">
+          <Route path="/messages/:chatId?">
           <DialogsContainer />
           </Route>
           <Route path="/news/:page?">
@@ -51,7 +54,7 @@ const App = (props) => {
             <Login />
           </Route>
         </main>
-        
+        <Footer />
       </div>
     </Router>
   );
@@ -61,6 +64,15 @@ const mapStateToProps = (state) => ({
   initialized: state.app.initialized
 })
 
-export default connect(mapStateToProps, {
+const AppContainer = connect(mapStateToProps, {
   initializeApp
 })(App);
+
+const MainApp = (props) => {
+  return (
+  <Provider store={store}>
+    <AppContainer />
+  </Provider>)
+}
+
+export default MainApp;

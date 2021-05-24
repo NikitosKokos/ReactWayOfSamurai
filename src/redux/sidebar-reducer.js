@@ -2,7 +2,7 @@ import { userAPI } from '../api/api';
 
 const CHANGE_STATE_MENU = 'CHANGE-STATE-MENU';
 const SET_FRIENDS = 'SET-FRIENDS';
-const TOGGLE_IS_FETCING = 'TOGGLE-IS-FETCING';
+const TOGGLE_IS_FETCING = 'sidebar/TOGGLE-IS-FETCING';
 
 let inintialState = {
     active: false,

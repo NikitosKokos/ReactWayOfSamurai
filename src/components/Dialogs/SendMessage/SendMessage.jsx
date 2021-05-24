@@ -16,6 +16,7 @@ const SendMessage = (props) => {
                         component={Textarea} 
                         name='message'
                         validate={[required, maxLength300]}
+                        errorClass='error-chat-form'
                     />
                 </div>
                 <button className={s.btn}><span>Send</span></button>

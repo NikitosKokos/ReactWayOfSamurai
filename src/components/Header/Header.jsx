@@ -14,9 +14,7 @@ const Header = (props) => {
   }
     return(
         <header className={s.header} >
-          <NavLink to='/' className={s.logo}>
-            LFJ
-          </NavLink>
+          <NavLink to='/' className={s.logo}>LFJ</NavLink>
           <div className={s.info} >
             <div className={s.loginWrap}>
               { props.isAuth 

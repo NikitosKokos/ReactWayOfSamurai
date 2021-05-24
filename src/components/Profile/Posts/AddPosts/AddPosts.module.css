@@ -15,6 +15,7 @@
     color: #eee;
     background: transparent;
     border: 2px solid #00adb5;
+    padding: 10px;
 }
 .textarea textarea::placeholder{
     color: #eee;
@@ -25,4 +26,47 @@
     color: #eee;
     display: inline-block;
     margin: 0px 0px 10px 0px;
+}
+
+.input{
+    display: none;
+}
+
+.buttons{
+    display: flex;
+    align-items: center;
+}
+
+.buttons label{
+    margin: 0px 0px 0px 10px;
+}
+
+.details{
+    margin: 0px 0px 0px 10px;
+    font-size: 14px;
+    color: #eee;
+    flex: 1 1 auto;
+}
+
+@media (max-width: 767px){
+    .buttons{
+        flex-wrap: wrap;
+    }
+   
+    .details{
+        margin: 10px 0px 0px 0px;
+        flex: 1 1 100%;
+    }
+    .newpost{
+        padding: 20px;
+    }
+}
+@media (max-width: 480px){
+    .buttons{
+        flex-direction: column;
+        align-items: start;
+    }
+    .buttons label{
+        margin: 10px 0px 0px 0px;
+    }
 }
