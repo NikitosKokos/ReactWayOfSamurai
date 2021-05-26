@@ -24,6 +24,7 @@
   max-width: 1300px;
   margin: 0 auto;
   position: relative;
+  min-height: 100vh;
 }
 @media (max-width: 1400px){
   .wrapper{
