@@ -4,11 +4,11 @@ const intance = axios.create({
     withCredentials: true,
     baseURL: 'https://social-network.samuraijs.com/api/1.0/',
     headers: {
-        'API-KEY': '90c5fdc2-5b27-4cac-abce-fb9643091c2b'},
+        'API-KEY': '8dd2b7a3-aa93-40bf-9359-84d3eb5a1a53'},
 })
 
 const news = axios.create({
-    baseURL: 'http://newsapi.org/v2/',
+    baseURL: 'https://newsapi.org/v2/',
 })
 
 export const userAPI = {

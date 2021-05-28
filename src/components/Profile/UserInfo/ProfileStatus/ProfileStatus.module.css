@@ -42,15 +42,21 @@
     width: 100%;
     height: 100%;
 }
-.edit img{
+.edit svg{
     width: 100%;
     height: 100%;
-    object-fit: contain;
+}
+.edit svg path, .edit svg polygon{
+    transition: all .3s ease-in-out;
+}
+@media (min-width: 992px){
+    .edit:hover svg path, .edit:hover svg polygon{
+        fill: #00adb5;
+    }
 }
 
 .about{
     display: flex;
-    align-items: center;
 }
 
 @media (max-width: 480px){

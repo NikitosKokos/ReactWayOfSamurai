@@ -29,7 +29,7 @@ const App = (props) => {
     return <div className="center"><Preloader /></div>
   }
   return (
-    <Router>
+    <Router basename={process.env.PUBLIC_URL} >
       <div className="wrapper">
       <HeaderContainer/>
         <SidebarContainer/>
