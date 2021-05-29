@@ -1,5 +1,5 @@
 import Dialogs from './Dialogs';
-import {addMes} from '../../redux/dialogs-reducer';
+import { addMes,setUserImage } from '../../redux/dialogs-reducer';
 import { connect } from 'react-redux';
 import { withAuthRedirect } from '../../hoc/withAuthRedirect';
 import { compose } from 'redux';

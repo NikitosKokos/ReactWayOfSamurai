@@ -15,8 +15,8 @@ const UserInfo = ({profile, updateStatus, status}) => {
                     <div className={s.fullName}>{profile.fullName}</div>
                     </div> 
                     <ProfileStatus status={status} updateStatus={updateStatus} />
-                    {/* <div className={s.about}>
-                        {profile.aboutMe}
+                    {/* <div className={s.job}>
+                        {profile.lookingForAJob && profile.lookingForAJobDescription}
                     </div> */}
                 </div>
                

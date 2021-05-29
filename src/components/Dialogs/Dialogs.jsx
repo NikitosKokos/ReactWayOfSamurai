@@ -4,6 +4,7 @@ import Message from './Message/Message';
 import SendMessage from './SendMessage/SendMessage';
 import React from 'react';
 import { Redirect } from 'react-router-dom';
+import userPhoto from '../../assets/img/user.png';
 
 
 const Dialogs = (props) => {

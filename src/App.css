@@ -162,3 +162,10 @@
   border-radius: 10px 10px 0px 0px;
   z-index: 2;
 }
+
+.preloader-container{
+  height: calc(100vh - 100px);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}

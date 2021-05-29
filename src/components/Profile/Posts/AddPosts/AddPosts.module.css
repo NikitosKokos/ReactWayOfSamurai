@@ -35,10 +35,15 @@
 .buttons{
     display: flex;
     align-items: center;
+    overflow: hidden;
+}
+.buttons button{
+    flex: 0 0 auto;
 }
 
 .buttons label{
     margin: 0px 0px 0px 10px;
+    flex: 0 0 auto;
 }
 
 .details{
@@ -46,6 +51,20 @@
     font-size: 14px;
     color: #eee;
     flex: 1 1 auto;
+    line-height: 1.2;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    display: flex;
+    align-items: center;
+}
+
+.details span{
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    flex: 0 1 auto;
+    margin: 0px 5px 0px 0px;
 }
 
 @media (max-width: 767px){
@@ -67,6 +86,13 @@
         align-items: start;
     }
     .buttons label{
+        width: 100%;
         margin: 10px 0px 0px 0px;
+    }
+    .buttons button{
+        width: 100%;
+    }
+    .details{
+        width: 100%;
     }
 }

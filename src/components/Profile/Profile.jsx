@@ -6,7 +6,7 @@ import UserInfo from './UserInfo/UserInfo';
 const Profile = ({ profile, status, updateStatus }) => {
     
     if(!profile){
-        return <Preloader />
+        return <div className='preloader-container'><Preloader /></div>
     }
 
     return(

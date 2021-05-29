@@ -23,9 +23,9 @@ const ProfileStatus = (props) => {
             <div className={s.status}>
             {!editMode && 
                 <div className={s.about}><span  className={s.text}>
-                        {status}
+                        {status ? status: 'Missing status'}
                 </span>
-            {status && <div onClick={activateEditMode} className={s.edit}>
+            <div onClick={activateEditMode} className={s.edit}>
                 <svg 
                         viewBox="0 0 383.947 383.947">
                     <g>
@@ -68,7 +68,7 @@ const ProfileStatus = (props) => {
                     <g>
                     </g>
                 </svg>
-            </div>}
+            </div>
             </div>}
             {editMode && 
             <div className={s.input}>

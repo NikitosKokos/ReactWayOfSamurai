@@ -65,7 +65,7 @@ const AddPosts = ({ handleSubmit, formImage, setFormImage }) => {
                 </label>
                 {formImage &&
                 <div className={s.details} >
-                    {formImage.name} - {(formImage.size / 1024000).toFixed(2)}MB
+                    <span>{formImage.name}</span> - {(formImage.size / 1024000).toFixed(2)}MB
                 </div>}
             </div>
         </form>

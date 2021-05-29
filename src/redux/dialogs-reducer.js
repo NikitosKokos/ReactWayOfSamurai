@@ -1,8 +1,7 @@
-import {reset} from 'redux-form';
-
 const ADD_MES = 'ADD-MES';
 
 let inintialState = {
+    userImage: null,
     messages: [
         {id: 1, text: 'Hi Den!1', avatar: 'https://buki.com.ua/data/files/news/15542215853893.jpg'},
         {id: 2, text: 'Hello, how do you do?', avatar: 'https://www.flaticon.com/svg/static/icons/svg/1503/1503835.svg'},
@@ -16,7 +15,7 @@ let inintialState = {
         {id: 4, name: 'Boris'},
         {id: 5, name: 'Vika'},
         {id: 6, name: 'Olga'},
-    ], 
+    ],
 };
 const dialogsReducer = (state = inintialState, action) => {
     switch(action.type){
@@ -35,6 +34,7 @@ const dialogsReducer = (state = inintialState, action) => {
 }
 
 export const addMes = (newMesText) => ({ type: ADD_MES, newMesText });
+
 
 
 export default dialogsReducer;
