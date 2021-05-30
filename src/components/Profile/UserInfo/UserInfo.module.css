@@ -16,6 +16,7 @@
   height: 70px;
   border-radius: 50%;
   overflow: hidden;
+  position: relative;
 }
 .photo img{
   width: 100%;
@@ -24,6 +25,36 @@
   object-fit: cover;
   max-width: 100%;
 }
+.inputFile{
+  position: absolute;
+  top: 0;
+  left: 0;
+  opacity: 0;
+  width: 100%;
+  height: 100%;
+}
+.addPhoto{
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #00acb58a;
+  transition: all .3s ease-in-out;
+  opacity: 0;
+  cursor: pointer;
+}
+.addPhoto svg{
+  width: 30px;
+  height: 30px;
+}
+.addPhoto:hover{
+  opacity: 1;
+}
+
 .user{
   display: flex;
   padding: 40px 0px;

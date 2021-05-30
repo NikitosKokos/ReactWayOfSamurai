@@ -3,7 +3,7 @@ import PostsContainer from './Posts/PostsContainer';
 import s from './Profile.module.css';
 import UserInfo from './UserInfo/UserInfo';
 
-const Profile = ({ profile, status, updateStatus }) => {
+const Profile = ({ profile, status, updateStatus, isOwner, savePhoto }) => {
     
     if(!profile){
         return <div className='preloader-container'><Preloader /></div>
@@ -11,7 +11,7 @@ const Profile = ({ profile, status, updateStatus }) => {
 
     return(
         <main className={s.main}>
-            <UserInfo profile={profile} status={status} updateStatus={updateStatus} />
+            <UserInfo savePhoto={savePhoto} isOwner={isOwner} profile={profile} status={status} updateStatus={updateStatus} />
             <PostsContainer />
       </main>
     );
