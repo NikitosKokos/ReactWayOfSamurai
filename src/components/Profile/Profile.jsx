@@ -12,7 +12,7 @@ const Profile = ({ profile, status, updateStatus, isOwner, savePhoto }) => {
     return(
         <main className={s.main}>
             <UserInfo savePhoto={savePhoto} isOwner={isOwner} profile={profile} status={status} updateStatus={updateStatus} />
-            <PostsContainer />
+            <PostsContainer isOwner={isOwner} />
       </main>
     );
 }

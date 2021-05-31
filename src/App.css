@@ -50,6 +50,7 @@
   "header header"
   "main main"
   "footer footer";
+  grid-template-rows: 60px 1fr 60px;
   }
 }
 
@@ -123,6 +124,11 @@
   letter-spacing: 2px;
   border: none;
   cursor: pointer;
+}
+@media (max-width: 992px){
+  .btnLight{
+    height: 40px;
+  }
 }
 .btnLight span{
  position: relative;

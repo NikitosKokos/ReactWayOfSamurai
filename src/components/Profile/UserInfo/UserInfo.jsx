@@ -28,7 +28,7 @@ const UserInfo = ({ profile, updateStatus, status, isOwner, savePhoto }) => {
                     <div className={s.name}>
                     <div className={s.fullName}>{profile.fullName}</div>
                     </div> 
-                    <ProfileStatus status={status} updateStatus={updateStatus} />
+                    <ProfileStatus isOwner={isOwner} status={status} updateStatus={updateStatus} />
                     {/* <div className={s.job}>
                         {profile.lookingForAJob && profile.lookingForAJobDescription}
                     </div> */}

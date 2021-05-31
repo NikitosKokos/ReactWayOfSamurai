@@ -72,4 +72,6 @@
   letter-spacing: 1px;
   color: #222831;
   border: 1px solid #222831;
+  border-radius: 0;
+  box-shadow: none;
 }

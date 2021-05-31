@@ -42,14 +42,14 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  background: #00acb58a;
+  background: #3333338a;
   transition: all .3s ease-in-out;
   opacity: 0;
   cursor: pointer;
 }
 .addPhoto svg{
-  width: 30px;
-  height: 30px;
+  width: 25px;
+  height: 25px;
 }
 .addPhoto:hover{
   opacity: 1;

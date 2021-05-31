@@ -2,20 +2,20 @@ import s from './ProfileStatus.module.css';
 import React from 'react';
 import Edit from '../../../../assets/img/edit.svg';
 
-const ProfileStatus = (props) => {
+const ProfileStatus = ({ isOwner, status, updateStatus }) => {
     const [editMode, setEditMode] = React.useState(false);
-    const [status, setStatus] = React.useState(props.status);
+    const [localStatus, setStatus] = React.useState(status);
 
     React.useEffect(() => {
-        setStatus(props.status);
-    },[props.status]);
+        setStatus(status);
+    },[status]);
 
     const activateEditMode = () => {
         setEditMode(true)
     }
     const deactivateEditMode = () => {
         setEditMode(false)
-        props.updateStatus(status);
+        updateStatus(localStatus);
     }
 
 
@@ -23,9 +23,9 @@ const ProfileStatus = (props) => {
             <div className={s.status}>
             {!editMode && 
                 <div className={s.about}><span  className={s.text}>
-                        {status ? status: 'Missing status'}
+                        {localStatus ? localStatus: 'Missing status'}
                 </span>
-            <div onClick={activateEditMode} className={s.edit}>
+            {isOwner && <div onClick={activateEditMode} className={s.edit}>
                 <svg 
                         viewBox="0 0 383.947 383.947">
                     <g>
@@ -68,11 +68,11 @@ const ProfileStatus = (props) => {
                     <g>
                     </g>
                 </svg>
-            </div>
+            </div>}
             </div>}
             {editMode && 
             <div className={s.input}>
-                <input onChange={(e) => setStatus(e.currentTarget.value)} autoFocus onBlur={deactivateEditMode} value={status} />
+                <input onChange={(e) => setStatus(e.currentTarget.value)} autoFocus onBlur={deactivateEditMode} value={localStatus} />
             </div>
             }
             </div>
