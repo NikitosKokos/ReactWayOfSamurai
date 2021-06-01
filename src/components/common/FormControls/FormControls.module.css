@@ -47,3 +47,37 @@ input[type="checkbox"] + .checkebox:after{
 input[type="checkbox"]:checked + .checkebox::after{
     opacity: 1;
 }
+
+
+.eye{
+    position: absolute;
+    top: 50%;
+    right: 15px;
+    transform: translateY(-50%);
+    cursor: pointer;
+}
+
+.eye svg{
+    width: 25px;
+    height: auto;
+}
+
+.eye svg path {
+    transition: all .3s ease-in-out;
+}
+
+@media (min-width: 992px){
+    .eye:hover svg path{
+        fill: #222831;
+    }
+}
+
+.eye.active svg path {
+    fill: #222831;
+}
+
+@media (min-width: 992px){
+    .eye.active:hover svg path{
+        fill: #393e46;
+    }
+}

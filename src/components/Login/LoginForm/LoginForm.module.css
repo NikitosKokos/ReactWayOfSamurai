@@ -75,3 +75,6 @@
   border-radius: 0;
   box-shadow: none;
 }
+.input input[type="password"]{
+  padding: 0 50px 0 20px;
+}

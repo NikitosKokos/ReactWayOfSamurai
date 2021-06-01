@@ -8,7 +8,7 @@
 .wrapper{
     margin: 0 auto;
     width: 400px;
-    padding: 0 10px;
+    padding: 0px 10px;
 }
 @media (max-width: 480px){
     .wrapper{
@@ -17,13 +17,14 @@
 }
 .login{
     padding: 40px 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: calc(100vh - 100px);
 }
 
 @media (max-width: 992px){
     .login{
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        min-height: calc(100vh - 100px);
+        min-height: calc(100vh - 80px);
     }
 }

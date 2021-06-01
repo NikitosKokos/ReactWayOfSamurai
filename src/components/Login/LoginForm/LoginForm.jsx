@@ -7,8 +7,6 @@ import { required } from '../../../utils/validators/validators';
 let LoginForm = ({handleSubmit, error}) => {
     return (
             <form className={s.form} onSubmit={handleSubmit}>
-                {/* {createField('Email','email',[required],Input)}
-                {createField('Password','password',[required],Input,'password')} */}
                 <div className={s.input}>
                     <Field 
                         type="text" 
@@ -20,7 +18,7 @@ let LoginForm = ({handleSubmit, error}) => {
                 </div>
                 <div className={s.input}>
                     <Field 
-                        type="password" 
+                        password={true} 
                         name='password' 
                         component={Input} 
                         validate={[required]}
