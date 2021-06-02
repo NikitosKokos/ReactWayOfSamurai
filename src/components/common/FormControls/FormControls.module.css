@@ -4,6 +4,9 @@
 .textarea{
     position: relative;
 }
+.textarea.password input{
+    padding: 0 50px 0 20px;
+}
 .formControl.error{
     border: 2px solid red;
 }

@@ -6,7 +6,7 @@ const FormControl = ({input, meta: { touched, error, warning }, children, errorC
     const hasError =  touched && error;
     return (
         <div className={`${s.formControl} ${ hasError ? 'error': ''}`}>
-            <div className={s.textarea}>
+            <div className={`${s.textarea} ${isPassword ? s.password : ''}`}>
                 {children}
                 {type === 'checkbox' && <span className={s.checkebox}></span>}
                 {isPassword && <div onClick={() => setIsPass(!isPass)} className={`${s.eye} ${isPass ? '' : s.active}`}>

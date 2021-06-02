@@ -1,8 +1,11 @@
+import React from 'react';
 import s from './UserInfo.module.css';
 import userPhoto from '../../../assets/img/user.png';
 import ProfileStatus from './ProfileStatus/ProfileStatus';
+import ProfileData from './ProfileData/ProfileData';
 
 const UserInfo = ({ profile, updateStatus, status, isOwner, savePhoto }) => {
+    const [editMode, setEditMode] = React.useState(false);
 
     const onUserPhotoSelected = (e) => {
         if(e.target.files.length){
@@ -29,14 +32,27 @@ const UserInfo = ({ profile, updateStatus, status, isOwner, savePhoto }) => {
                     <div className={s.fullName}>{profile.fullName}</div>
                     </div> 
                     <ProfileStatus isOwner={isOwner} status={status} updateStatus={updateStatus} />
-                    {/* <div className={s.job}>
-                        {profile.lookingForAJob && profile.lookingForAJobDescription}
-                    </div> */}
                 </div>
-               
-          </div> 
+          </div>
+          {editMode ? <ProfileDataForm profile={profile} /> : <ProfileData profile={profile} isOwner={isOwner} goToEditMode={() => setEditMode(true)} />}     
       </div>
     );
+}
+
+
+
+const ProfileDataForm = ({profile}) => {
+    return (
+        <div className={s.otherInfo}>
+            {profile.aboutMe && <div className={s.about}>
+                <span>About</span>: {profile.aboutMe}
+            </div>}
+            {profile.lookingForAJob && <div className={s.job}>
+                <span>Job</span>: {profile.lookingForAJobDescription}
+            </div>}
+            {Object.keys(profile.contacts).map(key => <Contact key={key} title={key} value={profile.contacts[key]} />)}
+        </div>
+    )
 }
 
 export default UserInfo;
