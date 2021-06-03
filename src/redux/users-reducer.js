@@ -1,13 +1,13 @@
 import { userAPI } from '../api/api';
 import { updateObjectInArray } from '../utils/objects-helpers';
 
-const FOLLOW = 'FOLLOW';
-const UNFOLLOW = 'UNFOLLOW';
-const SET_USERS = 'SET-USERS';
-const SET_CURRENT_PAGE = 'SET-CURRENT-PAGE';
-const SET_TOTAL_USERS_COUNT = 'SET-TOTAL-USERS-COUNT';
-const TOGGLE_IS_FETCING = 'users/TOGGLE-IS-FETCING';
-const TOGGLE_IS_FOLLOWING_PROGRESS = 'TOGGLE-IS-FOLLOWING-PROGRESS';
+const FOLLOW = 'usersPage/FOLLOW';
+const UNFOLLOW = 'usersPage/UNFOLLOW';
+const SET_USERS = 'usersPage/SET-USERS';
+const SET_CURRENT_PAGE = 'usersPage/SET-CURRENT-PAGE';
+const SET_TOTAL_USERS_COUNT = 'usersPage/SET-TOTAL-USERS-COUNT';
+const TOGGLE_IS_FETCING = 'usersPage/TOGGLE-IS-FETCING';
+const TOGGLE_IS_FOLLOWING_PROGRESS = 'usersPage/TOGGLE-IS-FOLLOWING-PROGRESS';
 
 let inintialState = {
     users: [], 
@@ -61,52 +61,13 @@ const usersReducer = (state = inintialState, action) => {
     }
 }
 
-export const acceptFollow = (userId) => {
-    return {
-        type: FOLLOW,
-        userId
-    }
-};
-export const acceptUnfollow = (userId) => {
-    return {
-        type: UNFOLLOW,
-        userId
-    }
-};
-export const setUsers = (users) => {
-    return {
-        type: SET_USERS,
-        users
-    }
-};
-export const setCurrentPage = (currentPage) => {
-    return {
-        type: SET_CURRENT_PAGE,
-        currentPage
-    }
-};
-export const setTotalUsersCount = (totalUsersCount) => {
-    return {
-        type: SET_TOTAL_USERS_COUNT,
-        totalUsersCount
-    }
-};
-
-export const toggleIsFetching = (isFetching) => {
-    return {
-        type: TOGGLE_IS_FETCING,
-        isFetching
-    }
-};
-export const toggleFollowingProgress = (isFetching,userId) => {
-    return {
-        type: TOGGLE_IS_FOLLOWING_PROGRESS,
-        isFetching,
-        userId
-    }
-};
-
-
+export const acceptFollow = (userId) => ({ type: FOLLOW, userId });
+export const acceptUnfollow = (userId) => ({ type: UNFOLLOW, userId });
+export const setUsers = (users) => ({ type: SET_USERS, users });
+export const setCurrentPage = (currentPage) => ({ type: SET_CURRENT_PAGE, currentPage });
+export const setTotalUsersCount = (totalUsersCount) => ({ type: SET_TOTAL_USERS_COUNT, totalUsersCount });
+export const toggleIsFetching = (isFetching) => ({ type: TOGGLE_IS_FETCING, isFetching });
+export const toggleFollowingProgress = (isFetching,userId) => ({ type: TOGGLE_IS_FOLLOWING_PROGRESS, isFetching, userId });
 
 
 export const requestUsers = (page,pageSize) => async (dispatch) => {

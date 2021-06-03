@@ -4,7 +4,7 @@ import userPhoto from '../../../assets/img/user.png';
 import ProfileStatus from './ProfileStatus/ProfileStatus';
 import ProfileData from './ProfileData/ProfileData';
 
-const UserInfo = ({ profile, updateStatus, status, isOwner, savePhoto }) => {
+const UserInfo = ({ profile, updateStatus, status, isOwner, savePhoto, isOpenDataDefault }) => {
     const [editMode, setEditMode] = React.useState(false);
 
     const onUserPhotoSelected = (e) => {
@@ -34,7 +34,7 @@ const UserInfo = ({ profile, updateStatus, status, isOwner, savePhoto }) => {
                     <ProfileStatus isOwner={isOwner} status={status} updateStatus={updateStatus} />
                 </div>
           </div>
-          {editMode ? <ProfileDataForm profile={profile} /> : <ProfileData profile={profile} isOwner={isOwner} goToEditMode={() => setEditMode(true)} />}     
+          {editMode ? <ProfileDataForm profile={profile} /> : <ProfileData isOpenDataDefault={isOpenDataDefault} profile={profile} isOwner={isOwner} goToEditMode={() => setEditMode(true)} />}     
       </div>
     );
 }

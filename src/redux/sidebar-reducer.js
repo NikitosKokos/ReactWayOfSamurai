@@ -1,7 +1,7 @@
 import { userAPI } from '../api/api';
 
-const CHANGE_STATE_MENU = 'CHANGE-STATE-MENU';
-const SET_FRIENDS = 'SET-FRIENDS';
+const CHANGE_STATE_MENU = 'sidebar/CHANGE-STATE-MENU';
+const SET_FRIENDS = 'sidebar/SET-FRIENDS';
 const TOGGLE_IS_FETCING = 'sidebar/TOGGLE-IS-FETCING';
 
 let inintialState = {
@@ -32,26 +32,9 @@ export const sidebarReducer = (state = inintialState, action) => {
     }
 }
 
-export const changeStateMenu = (thisState) => {
-    return {
-        type: CHANGE_STATE_MENU,
-        payload: thisState,
-    }
-};
-
-export const setFriends = (friends) => {
-    return {
-        type: SET_FRIENDS,
-        payload: friends
-    }
-};
-
-export const toggleIsFetching = (isFetching) => {
-    return {
-        type: TOGGLE_IS_FETCING,
-        payload: isFetching
-    }
-};
+export const changeStateMenu = (thisState) => ({ type: CHANGE_STATE_MENU, payload: thisState, });
+export const setFriends = (friends) => ({ type: SET_FRIENDS, payload: friends });
+export const toggleIsFetching = (isFetching) => ({ type: TOGGLE_IS_FETCING, payload: isFetching });
 
 export const requestFriends = (pageSize) => async (dispatch) => {
     const data = await userAPI.getUsers(1,pageSize);

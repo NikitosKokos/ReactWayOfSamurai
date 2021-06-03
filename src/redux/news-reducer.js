@@ -1,10 +1,10 @@
 import { newsAPI } from "../api/api";
 
-const SET_NEWS = 'SET_NEWS';
-const SET_TOTAL_RESULT = 'SET_TOTAL_RESULT';
-const TOGGLE_IS_FETCING = 'TOGGLE_IS_FETCING';
-const SET_CURRENT_PAGE = 'SET_CURRENT_PAGE';
-const SET_COUNTRY = 'SET_COUNTRY';
+const SET_NEWS = 'newsPage/SET_NEWS';
+const SET_TOTAL_RESULT = 'newsPage/SET_TOTAL_RESULT';
+const TOGGLE_IS_FETCING = 'newsPage/TOGGLE_IS_FETCING';
+const SET_CURRENT_PAGE = 'newsPage/SET_CURRENT_PAGE';
+const SET_COUNTRY = 'newsPage/SET_COUNTRY';
 
 
 let inintialState = {
@@ -54,44 +54,14 @@ const newsReducer = (state = inintialState, action) => {
 }
 
 
-export const setNews = (news) => {
-    return {
-        type: SET_NEWS,
-        payload: news
-    }
-}
-
-export const setTotalResults = (totalResults) => {
-    return {
-        type: SET_TOTAL_RESULT,
-        payload: totalResults
-    }
-}
-
-export const toggleIsFetching = (isFetching) => {
-    return {
-        type: TOGGLE_IS_FETCING,
-        payload: isFetching
-    }
-};
-
-export const setCurrentPage = (page) => {
-    return {
-        type: SET_CURRENT_PAGE,
-        payload: page
-    }
-};
-
-export const setCountry = (country) => {
-    return {
-        type: SET_COUNTRY,
-        payload: country
-    }
-}
+export const setNews = (news) => ({ type: SET_NEWS, payload: news });
+export const setTotalResults = (totalResults) => ({ type: SET_TOTAL_RESULT, payload: totalResults });
+export const toggleIsFetching = (isFetching) => ({ type: TOGGLE_IS_FETCING, payload: isFetching });
+export const setCurrentPage = (page) => ({ type: SET_CURRENT_PAGE, payload: page });
+export const setCountry = (country) => ({ type: SET_COUNTRY, payload: country });
 
 
-export const requestNews = (country,page,pageSize) => {
-    return async (dispatch) => {
+export const requestNews = (country,page,pageSize) => async (dispatch) => {
     dispatch(toggleIsFetching(true));
     dispatch(setCurrentPage(page));
     const {status, totalResults, articles} = await newsAPI.getNews(country,page,pageSize);
@@ -100,14 +70,11 @@ export const requestNews = (country,page,pageSize) => {
         dispatch(setTotalResults(totalResults));
         dispatch(setNews(articles));    
     }
-    }  
 }
 
-export const requestCountry = (country,page,pageSize) => {
-    return (dispatch) => {
+export const requestCountry = (country,page,pageSize) => (dispatch) => {
     dispatch(requestNews(country,page,pageSize));
     dispatch(setCountry(country));
-    }  
 }
 
 export default newsReducer;

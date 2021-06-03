@@ -1,8 +1,8 @@
 import { stopSubmit } from "redux-form";
 import { userAPI } from "../api/api";
 
-const CHANGE_STATE_BURG = 'CHANGE-STATE-BURG';
-const SET_USER_DATA = 'auth/SET-USER-DATA';
+const CHANGE_STATE_BURG = 'auth/CHANGE_STATE_BURG';
+const SET_USER_DATA = 'auth/SET_USER_DATA';
 
 let inintialState = {
     burgerActive: false,
@@ -29,19 +29,8 @@ const authReducer = (state = inintialState, action) => {
     }
 }
 
-export const changeStateBurg = (newState) => {
-    return {
-        type: CHANGE_STATE_BURG,
-        newState,
-    }
-};
-
-export const setAuthUserData = (id, email, login, isAuth) => {
-    return {
-        type: SET_USER_DATA,
-        payload: {id, email, login,isAuth},
-    }
-};
+export const changeStateBurg = (newState) => ({ type: CHANGE_STATE_BURG, newState, });
+export const setAuthUserData = (id, email, login, isAuth) => ({ type: SET_USER_DATA, payload: {id, email, login,isAuth}, });
 
 export const authUser = () => async (dispatch) => {
    const response = await userAPI.auth();

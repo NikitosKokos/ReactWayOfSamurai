@@ -5,8 +5,8 @@ const Contact = ({title, value}) => {
     return (<div className={s.item} ><span>{title}</span>: {value}</div>);
 }
 
-const ProfileData = ({profile, isOwner, goToEditMode}) => {
-    const [isOpenData, setIsOpenData] = React.useState(false);
+const ProfileData = ({profile, isOwner, goToEditMode, isOpenDataDefault = false}) => {
+    const [isOpenData, setIsOpenData] = React.useState(isOpenDataDefault);
     const bodyEl = React.useRef(null);
 
     const toggleOpenData = () => {

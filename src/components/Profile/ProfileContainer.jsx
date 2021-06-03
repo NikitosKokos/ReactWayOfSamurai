@@ -34,7 +34,8 @@ class ProfileContainer extends React.Component {
                     profile={this.props.profile} 
                     status={this.props.status} 
                     updateStatus={this.props.updateStatus}
-                    savePhoto={this.props.savePhoto} />
+                    savePhoto={this.props.savePhoto}
+                    isOpenDataDefault={this.props.isOpenDataDefault} />
     }
 }
 
@@ -44,7 +45,8 @@ const mapStateToProps = (state) => (
         profile: state.profilePage.profile,
         status: state.profilePage.status,
         isAuth: state.auth.isAuth,
-        autorizedUserId: state.auth.id
+        autorizedUserId: state.auth.id,
+        isOpenDataDefault: false,
     }
 )
 

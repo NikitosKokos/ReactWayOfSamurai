@@ -1,4 +1,4 @@
-const ADD_MES = 'ADD-MES';
+const ADD_MES = 'dialogsPage/ADD-MES';
 
 let inintialState = {
     userImage: null,
