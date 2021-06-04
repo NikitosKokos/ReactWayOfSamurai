@@ -54,7 +54,10 @@ export const profileAPI = {
                 'Content-type': 'multipart/form-data'
             }
         })
-    }
+    },
+    saveProfile: (profile) => {
+        return intance.put('profile', profile)
+    },
 
 }
 

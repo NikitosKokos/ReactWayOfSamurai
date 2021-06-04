@@ -1,12 +1,13 @@
 import { profileAPI, userAPI } from "../api/api";
 
-const ADD_POST = 'ADD-POST';
-const SET_USER_PROFILE = 'SET-USER-PROFILE';
-const SET_STATUS = 'SET-STATUS';
-const DELETE_POST = 'DELETE_POST';
-const SET_LIKE_COUNT ='SET_LIKE_COUNT';
-const SET_USER_LIKE ='SET_USER_LIKE';
-const SAVE_PHOTO_SUCCESS = 'SAVE_PHOTO_SUCCESS';
+const ADD_POST = 'profilePage/ADD-POST';
+const SET_USER_PROFILE = 'profilePage/SET-USER-PROFILE';
+const SET_STATUS = 'profilePage/SET-STATUS';
+const DELETE_POST = 'profilePage/DELETE_POST';
+const SET_LIKE_COUNT ='profilePage/SET_LIKE_COUNT';
+const SET_USER_LIKE ='profilePage/SET_USER_LIKE';
+const SAVE_PHOTO_SUCCESS = 'profilePage/SAVE_PHOTO_SUCCESS';
+const SET_IS_OPEN_DATA = 'profilePage/SET_IS_OPEN_DATA';
 
 let inintialState = {
     posts: [
@@ -17,6 +18,7 @@ let inintialState = {
    ], 
    profile: null,
    status: '',
+   isOpenData: false,
  };
 const profileReducer = (state = inintialState, action) => {
     
@@ -71,6 +73,11 @@ const profileReducer = (state = inintialState, action) => {
                     ...state,
                     profile: { ...state.profile, photos: action.photos},
                 }
+        case SET_IS_OPEN_DATA:
+                return {
+                    ...state,
+                    isOpenData: action.isOpenData,
+                }
         default: 
             return state;
     }
@@ -83,11 +90,13 @@ export const setLikeCount = (id, newLikeCount) => ({ type: SET_LIKE_COUNT, id, n
 export const setUserLike = (id, isUserLike) => ({ type: SET_USER_LIKE, id, isUserLike });
 export const setStatus = (status) => ({ type: SET_STATUS, status });
 export const savePhotoSuccess = (photos) => ({ type: SAVE_PHOTO_SUCCESS, photos });
+export const setIsOpenData = (isOpenData) => ({ type: SET_IS_OPEN_DATA, isOpenData });
 
 
 export const getUserProfile = (userId) => async (dispatch) => {
     const response = await userAPI.getProfile(userId);
     dispatch(setUserProfile(response.data));
+    dispatch(setIsOpenData(false));
 };
 
 export const getStatus = (userId) => async (dispatch) => {
@@ -106,6 +115,15 @@ export const savePhoto = (file) => async (dispatch) => {
     const response = await profileAPI.savePhoto(file);
     if(response.data.resultCode === 0){
         dispatch(savePhotoSuccess(response.data.photos));
+    }
+};
+
+export const saveProfile = (profile) => async (dispatch, getState) => {
+    const userId = getState().auth.id;
+    const response = await profileAPI.saveProfile(profile);
+    if(response.data.resultCode === 0){
+        dispatch(getUserProfile(userId));
+        dispatch(setIsOpenData(true));
     }
 };
 

@@ -1,21 +1,47 @@
 .formControl{
     position: relative;
 }
-.textarea{
+
+.field{
     position: relative;
 }
-.textarea.password input{
+
+.field input{
+  height: 40px;
+  width: 100%;
+  padding: 0 20px;
+  font-size: 20px;
+  letter-spacing: 1px;
+  color: #222831;
+  border: 1px solid #222831;
+  border-radius: 0;
+  box-shadow: none;
+}
+
+.field textarea{
+    height: 80px;
+    width: 100%;
+    padding: 10px 20px;
+    font-size: 20px;
+    letter-spacing: 1px;
+    color: #222831;
+    border: 1px solid #222831;
+    border-radius: 0;
+    box-shadow: none;
+    resize: none;
+}
+
+.field.password input{
     padding: 0 50px 0 20px;
 }
-.formControl.error{
-    border: 2px solid red;
-}
+
 .error{
     display: block;
     color: #00adb5;
     font-size: 16px;
     letter-spacing: 1px;
 }
+
 input[type="checkbox"]{
     width: 100%;
     height: 100%;

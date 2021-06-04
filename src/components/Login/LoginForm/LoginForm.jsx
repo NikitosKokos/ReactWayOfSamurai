@@ -1,7 +1,7 @@
 import React from 'react';
 import s from './LoginForm.module.css';
 import {Field, reduxForm} from 'redux-form';
-import { createField, Input } from '../../common/FormControls/FormControls';
+import { Input } from '../../common/FormControls/FormControls';
 import { required } from '../../../utils/validators/validators';
 
 let LoginForm = ({handleSubmit, error}) => {

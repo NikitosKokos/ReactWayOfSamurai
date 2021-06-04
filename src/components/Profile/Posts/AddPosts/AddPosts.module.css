@@ -6,10 +6,7 @@
 .textarea{
     margin: 0px 0px 10px 0px;
 }
-.textarea textarea{
-    resize: none;
-    border-radius: 0;
-    width: 100%;
+.newpost .textarea textarea{
     height: 80px;
     font-size: 15px;
     color: #eee;
@@ -17,7 +14,7 @@
     border: 2px solid #00adb5;
     padding: 10px;
 }
-.textarea textarea::placeholder{
+.newpost .textarea textarea::placeholder{
     color: #eee;
 }
 .label{

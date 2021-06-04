@@ -1,0 +1,34 @@
+.form{
+    border-top: 1px solid #393e46;
+    border-bottom: 1px solid #393e46;
+    margin: 0px 0px 20px 0px;
+    padding: 15px 0;
+}
+
+.body{
+    max-width: 400px;
+}
+
+.label{
+    display: inline-block;
+    font-size: 18px;
+    color: #393e46;
+    font-weight: 500;
+    letter-spacing: .3px;
+    margin: 0px 0px 5px 0px;
+    cursor: pointer;
+}
+
+.item{
+    margin: 0px 0px 15px 0px;
+}
+
+.item_checkbox{
+    display: flex;
+    align-items: center;
+}
+
+.item_checkbox .label{
+    margin: 0px 0px 0px 0px;
+    padding: 0px 10px 0px 0px;
+}

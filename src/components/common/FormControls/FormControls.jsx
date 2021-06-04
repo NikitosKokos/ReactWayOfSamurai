@@ -5,8 +5,8 @@ import s from './FormControls.module.css';
 const FormControl = ({input, meta: { touched, error, warning }, children, errorClass, isPass, setIsPass, isPassword, type, ...props}) => {
     const hasError =  touched && error;
     return (
-        <div className={`${s.formControl} ${ hasError ? 'error': ''}`}>
-            <div className={`${s.textarea} ${isPassword ? s.password : ''}`}>
+        <div className={s.formControl}>
+            <div className={`${s.field} ${isPassword ? s.password : ''}`}>
                 {children}
                 {type === 'checkbox' && <span className={s.checkebox}></span>}
                 {isPassword && <div onClick={() => setIsPass(!isPass)} className={`${s.eye} ${isPass ? '' : s.active}`}>

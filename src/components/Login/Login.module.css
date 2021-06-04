@@ -8,11 +8,11 @@
 .wrapper{
     margin: 0 auto;
     width: 400px;
-    padding: 0px 10px;
 }
 @media (max-width: 480px){
     .wrapper{
         width: 100%;
+        padding: 0px 10px;
     }
 }
 .login{

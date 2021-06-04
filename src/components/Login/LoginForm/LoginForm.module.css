@@ -63,15 +63,7 @@
 .input{
   margin: 0px 0px 15px 0px;
 }
+
 .input input{
-  height: 40px;
-  width: 100%;
-  padding: 0 20px;
   margin: 0px 0px 4px 0px;
-  font-size: 20px;
-  letter-spacing: 1px;
-  color: #222831;
-  border: 1px solid #222831;
-  border-radius: 0;
-  box-shadow: none;
 }
