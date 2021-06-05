@@ -3,7 +3,7 @@ import { Field, reduxForm } from 'redux-form';
 import { Input, Textarea } from '../../../common/FormControls/FormControls';
 import s from './ProfileDataForm.module.css';
 
-let ProfileDataForm = ({ handleSubmit }) => {
+let ProfileDataForm = ({ handleSubmit,  profile, backToDefaultMode, error }) => {
     return (
         <form  onSubmit={handleSubmit} className={s.form}>
             <div className={s.body}>
@@ -50,8 +50,25 @@ let ProfileDataForm = ({ handleSubmit }) => {
                         placeholder='Professional skills'
                     />
                 </div>
+                {Object.keys(profile.contacts).map(key => <div key={key} className={s.item}>
+                    <label className={s.label} htmlFor={`contacts.${key}`} >{key}</label>
+                    <Field 
+                        type="text" 
+                        id={`contacts.${key}`}
+                        name={`contacts.${key}`} 
+                        component={Input} 
+                        validate={[]}
+                        placeholder={key}
+                    />
+                </div>)}
             </div>
-            <div className={s.button}><button className='btn'><span>Save</span></button></div>
+            {error && <div className={s.submitError}>
+                {error}
+            </div>}
+            <div className={s.buttons}>
+                <button className='btn'><span>Save</span></button>
+                <div onClick={backToDefaultMode} className="btn btn_t"><span>Back</span></div>
+            </div>
         </form>
     )
 }

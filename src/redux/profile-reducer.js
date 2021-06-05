@@ -1,3 +1,4 @@
+import { stopSubmit } from "redux-form";
 import { profileAPI, userAPI } from "../api/api";
 
 const ADD_POST = 'profilePage/ADD-POST';
@@ -96,7 +97,7 @@ export const setIsOpenData = (isOpenData) => ({ type: SET_IS_OPEN_DATA, isOpenDa
 export const getUserProfile = (userId) => async (dispatch) => {
     const response = await userAPI.getProfile(userId);
     dispatch(setUserProfile(response.data));
-    dispatch(setIsOpenData(false));
+    // dispatch(setIsOpenData(false));
 };
 
 export const getStatus = (userId) => async (dispatch) => {
@@ -123,7 +124,16 @@ export const saveProfile = (profile) => async (dispatch, getState) => {
     const response = await profileAPI.saveProfile(profile);
     if(response.data.resultCode === 0){
         dispatch(getUserProfile(userId));
-        dispatch(setIsOpenData(true));
+        // dispatch(setIsOpenData(true));
+    }else{
+        const messages = response.data.messages;
+        const errorMessages = messages.map((message, i) => {
+            const reg = /\((.+?)\)/;
+            const error = message.match(reg)[1].toLowerCase().replace('contacts->', '');
+            return {[error]: `${message.replace(reg, '')} ${error}`};
+        })
+        dispatch(stopSubmit('editProfile', {"contacts": errorMessages[0]}));
+        return Promise.reject(errorMessages[0]);
     }
 };
 

@@ -9,6 +9,12 @@
     max-width: 400px;
 }
 
+@media (max-width: 480px){
+    .body{
+        max-width: none;
+    }
+}
+
 .label{
     display: inline-block;
     font-size: 18px;
@@ -20,9 +26,11 @@
 }
 
 .item{
-    margin: 0px 0px 15px 0px;
+    margin: 0px 0px 10px 0px;
 }
-
+.item input{
+    margin: 0px 0px 5px 0px;
+}
 .item_checkbox{
     display: flex;
     align-items: center;
@@ -31,4 +39,20 @@
 .item_checkbox .label{
     margin: 0px 0px 0px 0px;
     padding: 0px 10px 0px 0px;
+}
+
+.buttons{
+    display: flex;
+    align-items: center;
+}
+
+.submitError{
+    color: #00adb5;
+    font-size: 16px;
+    letter-spacing: 1px;
+    margin: 0px 0px 10px 0px;
+}
+
+.buttons button{
+    margin: 0px 10px 0px 0px;
 }
