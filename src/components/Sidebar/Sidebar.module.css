@@ -19,13 +19,16 @@
         transform: translateX(-100%);
         transition: all .3s ease-in-out;
     }
+
     .aside.active{
         transform: translateX(0%);
     }
 }
+
 .list{
     padding-inline-start: 0px;
 }
+
 .list li{
     list-style: none;
     width: 100%;
@@ -45,57 +48,65 @@
     padding: 10px 0;
     transition: all .3s ease-in-out;
 }
+
 .link span{
     position: relative;
     z-index: 2;
     transition: all .3s ease-in-out;
 }
+
 .linkSet{
     margin: 60px 0px 0px 0px;
 }
-    .link::after{
-        content:'';
-        position: absolute;
-        top: 50%;
-        right: -20px;
-        transform: translateY(-50%);
-        width: 20px;
-        height: calc(100% - 5px);
-        background: #fff;
-        transition: all .3s ease-in-out, height .1s ease-in-out;
-        border-radius: 999px 0 0 999px;
-    }
-    .link::before{
-        content:'';
-        position: absolute;
-        top: 50%;
-        left: -20px;
-        transform: translateY(-50%);
-        width: 20px;
-        height: calc(100% - 5px);
-        border-radius: 0 999px 999px 0;
-        background: #fff;
-        transition: all .3s ease-in-out, height .1s ease-in-out;
-    }
-    @media (min-width: 992px){
-        .link:hover::after{
-            right: 0;
-        }
-        .link:hover::before{
-            left: 0;
-        }
-    }
 
-    .link.active::after{
+.link::after{
+    content:'';
+    position: absolute;
+    top: 50%;
+    right: -20px;
+    transform: translateY(-50%);
+    width: 20px;
+    height: calc(100% - 5px);
+    background: #fff;
+    transition: all .3s ease-in-out, height .1s ease-in-out;
+    border-radius: 999px 0 0 999px;
+}
+
+.link::before{
+    content:'';
+    position: absolute;
+    top: 50%;
+    left: -20px;
+    transform: translateY(-50%);
+    width: 20px;
+    height: calc(100% - 5px);
+    border-radius: 0 999px 999px 0;
+    background: #fff;
+    transition: all .3s ease-in-out, height .1s ease-in-out;
+}
+
+@media (min-width: 992px){
+    .link:hover::after{
         right: 0;
-        width: 100%;
-        height: 100%;
     }
-    .link.active::before{
+    
+    .link:hover::before{
         left: 0;
-        width: 100%;
-        height: 100%;
     }
-    .link.active span{
-        color: #222831;
-    }
+}
+
+.link.active::after{
+    right: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.link.active::before{
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.link.active span{
+    color: #222831;
+}

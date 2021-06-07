@@ -1,5 +1,6 @@
 import React from 'react';
 import { Field, reduxForm } from 'redux-form';
+import { required } from '../../../../utils/validators/validators';
 import { Input, Textarea } from '../../../common/FormControls/FormControls';
 import s from './ProfileDataForm.module.css';
 
@@ -14,7 +15,7 @@ let ProfileDataForm = ({ handleSubmit,  profile, backToDefaultMode, error }) => 
                         id='fullName'
                         name='fullName' 
                         component={Input} 
-                        validate={[]}
+                        validate={[required]}
                         placeholder='Full name'
                     />
                 </div>
@@ -25,7 +26,7 @@ let ProfileDataForm = ({ handleSubmit,  profile, backToDefaultMode, error }) => 
                         id='aboutMe'
                         name='aboutMe' 
                         component={Input} 
-                        validate={[]}
+                        validate={[required]}
                         placeholder='About me'
                     />
                 </div>
@@ -46,7 +47,7 @@ let ProfileDataForm = ({ handleSubmit,  profile, backToDefaultMode, error }) => 
                         id='lookingForAJobDescription'
                         name='lookingForAJobDescription' 
                         component={Textarea} 
-                        validate={[]}
+                        validate={[required]}
                         placeholder='Professional skills'
                     />
                 </div>

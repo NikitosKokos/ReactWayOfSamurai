@@ -10,7 +10,7 @@ const Friends = (props) => {
         <div className={s.friends}>
             <div className={s.title}>Friends</div>
             <div className={s.body}>
-                {props.isFetching ? <Preloader white={true} /> : friendsElements }
+                {props.isFetching ? <div className={s.preloader}><Preloader white={true} /></div> : friendsElements }
             </div>
         </div>
     );
