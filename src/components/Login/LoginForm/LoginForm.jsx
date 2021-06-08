@@ -4,7 +4,7 @@ import {Field, reduxForm} from 'redux-form';
 import { Input } from '../../common/FormControls/FormControls';
 import { required } from '../../../utils/validators/validators';
 
-let LoginForm = ({handleSubmit, error}) => {
+let LoginForm = ({handleSubmit, error, captchaUrl}) => {
     return (
             <form className={s.form} onSubmit={handleSubmit}>
                 <div className={s.input}>
@@ -28,6 +28,19 @@ let LoginForm = ({handleSubmit, error}) => {
                 {error && <div className={s.submitError}>
                     {error}
                 </div>}
+                { captchaUrl && 
+                <div className={s.captch}>
+                    <img src={captchaUrl} />
+                    <div className={s.input}>
+                        <Field 
+                            type="text" 
+                            name='captcha' 
+                            component={Input} 
+                            validate={[required]}
+                            placeholder='Symbols form image'
+                        />
+                    </div>
+                </div> }
                 <div className={s.checkbox}>
                     <Field 
                         type="checkbox" 
@@ -41,7 +54,7 @@ let LoginForm = ({handleSubmit, error}) => {
                     <button className={s.btn}><span>Login</span></button>
                 </div>
             </form>
-    )
+    )   
 }
 
 LoginForm = reduxForm({

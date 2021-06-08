@@ -2,7 +2,6 @@
 
 }
 
-
 .label{
     display: inline-block;
     font-size: 20px;
@@ -34,23 +33,25 @@
 
 .btn span{
     position: relative;
+}
+
+.btn span:before{
+  content: '';
+  position: absolute;
+  bottom: -1px;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background: currentColor;
+  border-radius: 20px;
+  transition: all .3s ease-in-out;
+}
+
+@media (min-width: 992px){
+  .btn:hover span::before{
+    width: 100%;
   }
-  .btn span:before{
-    content: '';
-    position: absolute;
-    bottom: -1px;
-    left: 0;
-    width: 0;
-    height: 2px;
-    background: currentColor;
-    border-radius: 20px;
-    transition: all .3s ease-in-out;
-  }
-  @media (min-width: 992px){
-    .btn:hover span::before{
-        width: 100%;
-  }
-  }
+}
 
 .submitError{
     display: block;

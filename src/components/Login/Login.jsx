@@ -7,7 +7,7 @@ import LoginForm from './LoginForm/LoginForm';
 
 const Login = (props) => {
     const onSubmit = (formData) => {
-        props.login(formData.email,formData.password,formData.rememberMe);
+        props.login(formData.email, formData.password, formData.rememberMe, formData.captcha);
     }
     if(props.isAuth){
         return <Redirect to='/profile'/>
@@ -16,13 +16,14 @@ const Login = (props) => {
         <div className={s.login}>
             <div className={s.wrapper}>
                 <h1 className={s.title}>login</h1>
-                <LoginForm onSubmit={onSubmit} />
+                <LoginForm captchaUrl={props.captchaUrl} onSubmit={onSubmit} />
             </div>
         </div>
     )
 }
 
 const mapStateToProps =(state) => ({
-    isAuth: state.auth.isAuth
+    isAuth: state.auth.isAuth,
+    captchaUrl: state.auth.captchaUrl
 })
 export default connect(mapStateToProps, {login})(Login);

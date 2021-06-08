@@ -16,6 +16,7 @@
     padding: 15px 0;
     transition: all .3s ease-in-out;
 }
+
 .title:before, .title::after{
     content: '';
     position: absolute;
