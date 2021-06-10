@@ -3,7 +3,9 @@ import HeaderContainer from './components/Header/HeaderContainer';
 import SidebarContainer from './components/Sidebar/SidebarContainer';
 import {
   BrowserRouter as Router,
-  Route
+  Redirect,
+  Route,
+  Switch
 } from "react-router-dom";
 import React from 'react';
 import { connect } from 'react-redux';
@@ -13,6 +15,7 @@ import {Provider} from 'react-redux';
 import store from './redux/redux-store';
 import Footer from './components/Footer/Footer';
 import { withSuspense } from './hoc/withSuspense';
+import Page404 from './components/Page404/Page404';
 
 const DialogsContainer = withSuspense(React.lazy(() => import('./components/Dialogs/DialogsContainer')));
 const ProfileContainer = withSuspense(React.lazy(() => import('./components/Profile/ProfileContainer')));
@@ -34,27 +37,35 @@ const App = (props) => {
       <HeaderContainer/>
         <SidebarContainer/>
         <main className="main">
-          <Route path="/profile/:userId?">
-            <ProfileContainer />
-          </Route>
-          <Route path="/messages/:chatId?">
-            <DialogsContainer />
-          </Route>
-          <Route path="/news/:page?">
-           <NewsContainer />
-          </Route>
-          <Route path="/music">
-           
-          </Route>
-          <Route path="/settings">
-           
-          </Route>
-          <Route path="/users/:page?">
-            <UsersContainer />
-          </Route>
-          <Route path="/login">
-            <Login />
-          </Route>
+          <Switch>
+            <Route exact path="/">
+              <Redirect to="/profile" />
+            </Route>
+            <Route path="/profile/:userId?">
+              <ProfileContainer />
+            </Route>
+            <Route path="/messages/:chatId?">
+              <DialogsContainer />
+            </Route>
+            <Route path="/news/:page?">
+            <NewsContainer />
+            </Route>
+            <Route path="/music">
+            
+            </Route>
+            <Route path="/settings">
+            
+            </Route>
+            <Route path="/users/:page?">
+              <UsersContainer />
+            </Route>
+            <Route path="/login">
+              <Login />
+            </Route>
+            <Route path="*">
+              <Page404 />
+            </Route>
+          </Switch>
         </main>
         <Footer />
       </div>

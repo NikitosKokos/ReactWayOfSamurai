@@ -1,0 +1,27 @@
+.page404{
+    height: calc(100vh - 100px);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    padding: 20px 0;
+}
+
+@media (max-width: 992px){
+    .page404{
+        height: calc(100vh - 80px);
+    }
+}
+
+.title{
+    font-weight: 900;
+    font-size: 34px;
+    color: #00adb5;
+    margin: 0px 0px 20px 0px;
+}
+
+.title span{
+    display: block;
+    font-size: 70px;
+}
