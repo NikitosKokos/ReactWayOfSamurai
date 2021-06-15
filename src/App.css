@@ -187,3 +187,22 @@
     height: calc(100vh - 80px);
   }
 }
+
+
+.globalError{
+  position: fixed;
+  top: 20px;
+  right: 0px;
+  padding: 10px 20px;
+  margin: 0 20px;
+  width: auto;
+  border-radius: 10px;
+  background: #fff;
+  font-size: 16px;
+  line-height: 1.4;
+  color: #00adb5;
+  border: 2px solid #00adb5;
+  z-index: 10;
+  box-shadow: 2px 2px 7px #00adb5;
+  transition: all .3s ease-in-out;
+}

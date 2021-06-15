@@ -9,7 +9,7 @@ import {
 } from "react-router-dom";
 import React from 'react';
 import { connect } from 'react-redux';
-import {initializeApp} from './redux/app-reducer';
+import { initializeApp, catchGlobalError } from './redux/app-reducer';
 import Preloader from './components/common/Preloader/Preloader';
 import {Provider} from 'react-redux';
 import store from './redux/redux-store';
@@ -25,12 +25,24 @@ const Login = withSuspense(React.lazy(() => import('./components/Login/Login')))
 
 
 const App = (props) => {
+  
   React.useEffect(() => {
     props.initializeApp();
+
+    const catchAllUnhandledErrors = ({promise, reason}) => {
+      props.catchGlobalError(reason.toString());
+    }
+
+    window.addEventListener('unhandledrejection', catchAllUnhandledErrors);
+    return () => {
+      window.removeEventListener('unhandledrejection', catchAllUnhandledErrors);
+    }
   }, []);
+
   if(!props.initialized){
     return <div className="center"><Preloader /></div>
   }
+
   return (
     <Router basename={process.env.PUBLIC_URL} >
       <div className="wrapper">
@@ -68,17 +80,20 @@ const App = (props) => {
           </Switch>
         </main>
         <Footer />
+        { props.globalError && <div className='globalError'>{props.globalError}</div>}
       </div>
     </Router>
   );
 }
 
 const mapStateToProps = (state) => ({
-  initialized: state.app.initialized
+  initialized: state.app.initialized,
+  globalError: state.app.globalError
 })
 
 const AppContainer = connect(mapStateToProps, {
-  initializeApp
+  initializeApp,
+  catchGlobalError
 })(App);
 
 const MainApp = (props) => {

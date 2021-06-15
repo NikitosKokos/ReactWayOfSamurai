@@ -1,5 +1,5 @@
 .page404{
-    height: calc(100vh - 100px);
+    min-height: calc(100vh - 100px);
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -10,7 +10,7 @@
 
 @media (max-width: 992px){
     .page404{
-        height: calc(100vh - 80px);
+        min-height: calc(100vh - 80px);
     }
 }
 
